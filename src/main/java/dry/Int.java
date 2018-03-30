@@ -12,6 +12,14 @@ import org.jetbrains.annotations.NotNull;
 class Int extends Integer {
   private static final long serialVersionUID = 1L;
 
+  public static final long MIN_VALUE = Int64.MIN_VALUE;
+
+  public static final long MAX_VALUE = Int64.MAX_VALUE;
+
+  public static final Int MIN = Int64.MIN;
+
+  public static final Int MAX = Int64.MAX;
+
   public Int(final long value) {
     super(value);
   }

@@ -12,6 +12,14 @@ import org.jetbrains.annotations.NotNull;
 final class Int16 extends Int {
   private static final long serialVersionUID = 1L;
 
+  public static final long MIN_VALUE = Short.MIN_VALUE;
+
+  public static final long MAX_VALUE = Short.MAX_VALUE;
+
+  public static final Int16 MIN = new Int16(MIN_VALUE);
+
+  public static final Int16 MAX = new Int16(MAX_VALUE);
+
   public Int16(final long value) {
     super(value);
   }

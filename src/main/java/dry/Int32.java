@@ -12,6 +12,14 @@ import org.jetbrains.annotations.NotNull;
 final class Int32 extends Int {
   private static final long serialVersionUID = 1L;
 
+  public static final long MIN_VALUE = java.lang.Integer.MIN_VALUE;
+
+  public static final long MAX_VALUE = java.lang.Integer.MAX_VALUE;
+
+  public static final Int32 MIN = new Int32(MIN_VALUE);
+
+  public static final Int32 MAX = new Int32(MAX_VALUE);
+
   public Int32(final long value) {
     super(value);
   }
