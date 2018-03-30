@@ -16,4 +16,5 @@ repositories {
 }
 
 dependencies {
+  compile 'com.intellij:annotations:+@jar'
 }
