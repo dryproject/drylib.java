@@ -1,0 +1,19 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+version = rootProject.file('VERSION').text.trim()
+
+jar {
+  manifest {
+    attributes 'Implementation-Title': 'DRYlib for Java',
+               'Implementation-Version': version
+  }
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+}
