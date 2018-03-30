@@ -21,10 +21,10 @@ final class Int32 extends Int {
   public static final Int32 MAX = new Int32(MAX_VALUE);
 
   public Int32(final long value) {
-    super(value);
+    super(value, MIN_VALUE, MAX_VALUE);
   }
 
   public Int32(@NotNull final BigInteger value) {
-    super(value);
+    super(value, MIN.value, MAX.value);
   }
 }

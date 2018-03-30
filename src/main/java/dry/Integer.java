@@ -5,6 +5,7 @@ package dry;
 import java.math.BigInteger;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Integer number (arbitrary size).
@@ -21,6 +22,29 @@ class Integer extends Number {
   public static final Integer TEN = Natural.TEN;
 
   public final BigInteger value;
+
+  protected Integer(final long value,
+                    final long min_value) {
+    if (value < min_value) throw new ArithmeticException();
+    this.value = BigInteger.valueOf(value);
+  }
+
+  protected Integer(final long value,
+                    final long min_value,
+                    final long max_value) {
+    if (value < min_value) throw new ArithmeticException();
+    if (value > max_value) throw new ArithmeticException();
+    this.value = BigInteger.valueOf(value);
+  }
+
+  protected Integer(@NotNull final BigInteger value,
+                    @Nullable final BigInteger min_value,
+                    @Nullable final BigInteger max_value) {
+    if (value == null) throw new NullPointerException();
+    if (min_value != null && value.compareTo(min_value) < 0) throw new ArithmeticException();
+    if (max_value != null && value.compareTo(max_value) > 0) throw new ArithmeticException();
+    this.value = value;
+  }
 
   public Integer(final long value) {
     this.value = BigInteger.valueOf(value);

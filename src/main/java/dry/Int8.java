@@ -21,10 +21,10 @@ final class Int8 extends Int {
   public static final Int8 MAX = new Int8(MAX_VALUE);
 
   public Int8(final long value) {
-    super(value);
+    super(value, MIN_VALUE, MAX_VALUE);
   }
 
   public Int8(@NotNull final BigInteger value) {
-    super(value);
+    super(value, MIN.value, MAX.value);
   }
 }

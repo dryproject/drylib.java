@@ -25,10 +25,10 @@ class Natural extends Integer {
   public static final Natural TEN = new Natural(10L);
 
   public Natural(final long value) {
-    super(value);
+    super(value, MIN_VALUE);
   }
 
   public Natural(@NotNull final BigInteger value) {
-    super(value);
+    super(value, MIN.value, null);
   }
 }

@@ -20,6 +20,18 @@ class Int extends Integer {
 
   public static final Int MAX = Int64.MAX;
 
+  protected Int(final long value,
+                final long min_value,
+                final long max_value) {
+    super(value, min_value, max_value);
+  }
+
+  protected Int(@NotNull final BigInteger value,
+                @NotNull final BigInteger min_value,
+                @NotNull final BigInteger max_value) {
+    super(value, min_value, max_value);
+  }
+
   public Int(final long value) {
     super(value);
   }

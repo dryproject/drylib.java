@@ -21,10 +21,10 @@ final class Int64 extends Int {
   public static final Int64 MAX = new Int64(MAX_VALUE);
 
   public Int64(final long value) {
-    super(value);
+    super(value, MIN_VALUE, MAX_VALUE);
   }
 
   public Int64(@NotNull final BigInteger value) {
-    super(value);
+    super(value, MIN.value, MAX.value);
   }
 }

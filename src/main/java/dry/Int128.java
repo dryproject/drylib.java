@@ -21,10 +21,10 @@ final class Int128 extends Int {
   public static final Int128 MAX = new Int128(MAX_VALUE);
 
   public Int128(final long value) {
-    super(value);
+    super(BigInteger.valueOf(value), MIN_VALUE, MAX_VALUE);
   }
 
   public Int128(@NotNull final BigInteger value) {
-    super(value);
+    super(value, MIN.value, MAX.value);
   }
 }

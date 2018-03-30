@@ -21,10 +21,10 @@ final class Int16 extends Int {
   public static final Int16 MAX = new Int16(MAX_VALUE);
 
   public Int16(final long value) {
-    super(value);
+    super(value, MIN_VALUE, MAX_VALUE);
   }
 
   public Int16(@NotNull final BigInteger value) {
-    super(value);
+    super(value, MIN.value, MAX.value);
   }
 }
