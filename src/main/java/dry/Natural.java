@@ -12,6 +12,12 @@ import org.jetbrains.annotations.NotNull;
 class Natural extends Integer {
   private static final long serialVersionUID = 1L;
 
+  public static final long MIN_VALUE = 0L;
+
+  public static final Natural MIN = new Natural(MIN_VALUE);
+
+  public static final Natural ZERO = MIN;
+
   public Natural(final long value) {
     super(value);
   }
