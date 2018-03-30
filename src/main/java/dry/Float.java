@@ -8,6 +8,14 @@ package dry;
 class Float extends Number {
   private static final long serialVersionUID = 1L;
 
+  public static final double MIN_VALUE = Float64.MIN_VALUE;
+
+  public static final double MAX_VALUE = Float64.MAX_VALUE;
+
+  public static final Float MIN = Float64.MIN;
+
+  public static final Float MAX = Float64.MAX;
+
   public final double value;
 
   public Float(final double value) {
