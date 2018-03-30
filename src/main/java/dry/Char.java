@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
  * Character (Unicode code point).
  */
 class Char extends java.lang.Object {
+  private static final long serialVersionUID = 1L;
+
   public final int value;
 
   public Char(final int value) {

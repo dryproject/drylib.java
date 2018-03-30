@@ -5,7 +5,9 @@ package dry;
 /**
  * Base class for number types.
  */
-abstract class Number extends java.lang.Number {
+abstract class Number extends java.lang.Number implements java.io.Serializable {
+  private static final long serialVersionUID = 1L;
+
   @Override
   public long longValue() {
     return 0; // TODO

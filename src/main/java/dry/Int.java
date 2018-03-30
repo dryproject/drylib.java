@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
  * Integer number (native size).
  */
 class Int extends Integer {
+  private static final long serialVersionUID = 1L;
 
   public Int(final long value) {
     super(value);

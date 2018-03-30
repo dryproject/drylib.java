@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
  * Integer number (arbitrary size).
  */
 class Integer extends Number {
+  private static final long serialVersionUID = 1L;
+
   public final BigInteger value;
 
   public Integer(final long value) {

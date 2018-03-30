@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
  * Integer number (32-bit).
  */
 final class Int32 extends Int {
+  private static final long serialVersionUID = 1L;
 
   public Int32(final long value) {
     super(value);

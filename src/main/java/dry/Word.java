@@ -6,6 +6,8 @@ package dry;
  * Machine word (native size).
  */
 class Word extends Number {
+  private static final long serialVersionUID = 1L;
+
   public final long value;
 
   public Word(final long value) {

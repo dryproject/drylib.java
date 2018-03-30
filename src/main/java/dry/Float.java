@@ -6,6 +6,8 @@ package dry;
  * Floating-point number (native size).
  */
 class Float extends Number {
+  private static final long serialVersionUID = 1L;
+
   public final double value;
 
   public Float(final double value) {

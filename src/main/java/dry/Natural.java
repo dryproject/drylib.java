@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
  * Natural number (arbitrary size).
  */
 class Natural extends Integer {
+  private static final long serialVersionUID = 1L;
 
   public Natural(final long value) {
     super(value);

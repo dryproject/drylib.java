@@ -11,6 +11,8 @@ import org.jetbrains.annotations.NotNull;
  * Real number (arbitrary size).
  */
 final class Real extends Number {
+  private static final long serialVersionUID = 1L;
+
   public final BigDecimal value;
 
   public Real(final double value) {

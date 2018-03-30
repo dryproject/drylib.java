@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
  * Complex number (arbitrary size).
  */
 final class Complex extends Number {
+  private static final long serialVersionUID = 1L;
+
   public final Real real;
   public final Real imaginary;
 

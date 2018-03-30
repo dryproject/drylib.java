@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
  * Integer number (16-bit).
  */
 final class Int16 extends Int {
+  private static final long serialVersionUID = 1L;
 
   public Int16(final long value) {
     super(value);
