@@ -8,6 +8,14 @@ package dry;
 class Word extends Number {
   private static final long serialVersionUID = 1L;
 
+  public static final long MIN_VALUE = Word64.MIN_VALUE;
+
+  public static final long MAX_VALUE = Word64.MAX_VALUE;
+
+  public static final Word MIN = Word64.MIN;
+
+  public static final Word MAX = Word64.MAX;
+
   public final long value;
 
   public Word(final long value) {
