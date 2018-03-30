@@ -12,6 +12,14 @@ import org.jetbrains.annotations.NotNull;
 class Integer extends Number {
   private static final long serialVersionUID = 1L;
 
+  public static final Integer ZERO = Natural.ZERO;
+
+  public static final Integer ONE = Natural.ONE;
+
+  public static final Integer TWO = Natural.TWO;
+
+  public static final Integer TEN = Natural.TEN;
+
   public final BigInteger value;
 
   public Integer(final long value) {

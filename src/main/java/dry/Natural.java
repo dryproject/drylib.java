@@ -18,6 +18,12 @@ class Natural extends Integer {
 
   public static final Natural ZERO = MIN;
 
+  public static final Natural ONE = new Natural(1L);
+
+  public static final Natural TWO = new Natural(2L);
+
+  public static final Natural TEN = new Natural(10L);
+
   public Natural(final long value) {
     super(value);
   }
