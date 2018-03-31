@@ -12,4 +12,10 @@ class TestInteger {
   void testConstructWithNull() {
     assertThatNullPointerException().isThrownBy(() -> { new Integer(null); });
   }
+
+  @Test
+  void testMethod_toString() {
+    assertThat(new Integer(-1).toString()).isEqualTo("-1");
+    assertThat(new Integer(0).toString()).isEqualTo("0");
+  }
 }
