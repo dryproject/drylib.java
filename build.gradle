@@ -6,7 +6,7 @@ version = rootProject.file('VERSION').text.trim()
 
 jar {
   manifest {
-    attributes 'Implementation-Title': 'DRYlib for Java',
+    attributes 'Implementation-Title': "DRYlib for Java",
                'Implementation-Version': version
   }
 }
@@ -17,4 +17,8 @@ repositories {
 
 dependencies {
   compile 'com.intellij:annotations:+@jar'
+}
+
+tasks.withType(JavaCompile).all {
+  options.compilerArgs.add('-Xlint:all')
 }
