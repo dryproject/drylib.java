@@ -19,8 +19,7 @@ public final strictfp class Float32 extends Float {
   public static final Float32 MAX = new Float32(MAX_VALUE);
 
   public Float32(final double value) {
-    // TODO: check for underflow/overflow
-    super(value);
+    super(value, MIN_VALUE, MAX_VALUE);
   }
 
   public Float32(final float value) {
@@ -28,8 +27,7 @@ public final strictfp class Float32 extends Float {
   }
 
   public Float32(@NotNull final java.lang.Double value) {
-    // TODO: check for underflow/overflow
-    super(value);
+    super(value.doubleValue(), MIN_VALUE, MAX_VALUE); // // throws NullPointerException if needed
   }
 
   public Float32(@NotNull final java.lang.Float value) {

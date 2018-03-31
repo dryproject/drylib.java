@@ -20,6 +20,14 @@ public strictfp class Float extends Number {
 
   public final double value;
 
+  protected Float(final double value,
+                  final double min_value,
+                  final double max_value) {
+    if (value < min_value) throw new ArithmeticException();
+    if (value > max_value) throw new ArithmeticException();
+    this.value = value;
+  }
+
   public Float(final double value) {
     this.value = value;
   }
