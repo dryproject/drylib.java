@@ -12,9 +12,9 @@ import org.jetbrains.annotations.NotNull;
 public final strictfp class Int64 extends Int {
   private static final long serialVersionUID = 1L;
 
-  public static final long MIN_VALUE = Long.MIN_VALUE;
+  public static final long MIN_VALUE = java.lang.Long.MIN_VALUE;
 
-  public static final long MAX_VALUE = Long.MAX_VALUE;
+  public static final long MAX_VALUE = java.lang.Long.MAX_VALUE;
 
   public static final Int64 MIN = new Int64(MIN_VALUE);
 

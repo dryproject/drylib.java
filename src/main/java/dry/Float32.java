@@ -10,9 +10,9 @@ import org.jetbrains.annotations.NotNull;
 public final strictfp class Float32 extends Float {
   private static final long serialVersionUID = 1L;
 
-  public static final double MIN_VALUE = Float.MIN_VALUE;
+  public static final double MIN_VALUE = java.lang.Float.MIN_VALUE;
 
-  public static final double MAX_VALUE = Float.MAX_VALUE;
+  public static final double MAX_VALUE = java.lang.Float.MAX_VALUE;
 
   public static final Float32 MIN = new Float32(MIN_VALUE);
 

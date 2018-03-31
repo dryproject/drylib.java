@@ -12,9 +12,9 @@ import org.jetbrains.annotations.NotNull;
 public final strictfp class Int8 extends Int {
   private static final long serialVersionUID = 1L;
 
-  public static final long MIN_VALUE = Byte.MIN_VALUE;
+  public static final long MIN_VALUE = java.lang.Byte.MIN_VALUE;
 
-  public static final long MAX_VALUE = Byte.MAX_VALUE;
+  public static final long MAX_VALUE = java.lang.Byte.MAX_VALUE;
 
   public static final Int8 MIN = new Int8(MIN_VALUE);
 
