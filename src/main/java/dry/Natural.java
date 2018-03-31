@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Natural number (arbitrary size).
  */
-public class Natural extends Integer {
+public strictfp class Natural extends Integer {
   private static final long serialVersionUID = 1L;
 
   public static final long MIN_VALUE = 0L;

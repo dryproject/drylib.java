@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Floating-point number (64-bit double-precision).
  */
-public final class Float64 extends Float {
+public final strictfp class Float64 extends Float {
   private static final long serialVersionUID = 1L;
 
   public static final double MIN_VALUE = Double.MIN_VALUE;

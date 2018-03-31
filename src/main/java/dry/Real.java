@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Real number (arbitrary size).
  */
-public final class Real extends Number {
+public final strictfp class Real extends Number {
   private static final long serialVersionUID = 1L;
 
   public final BigDecimal value;

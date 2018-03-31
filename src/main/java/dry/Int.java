@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Integer number (native size).
  */
-public class Int extends Integer {
+public strictfp class Int extends Integer {
   private static final long serialVersionUID = 1L;
 
   public static final long MIN_VALUE = Int64.MIN_VALUE;
