@@ -38,4 +38,11 @@ public class Char extends java.lang.Object {
   public int getValue() {
     return this.value;
   }
+
+  @Override @NotNull
+  public String toString() {
+    return (this.value <= java.lang.Character.MAX_VALUE) ?
+      java.lang.Character.toString((char)this.value) :
+      String.valueOf(java.lang.Character.toChars(this.value));
+  }
 }

@@ -12,4 +12,10 @@ class TestChar {
   void testConstructWithNull() {
     assertThatNullPointerException().isThrownBy(() -> { new Char(null); });
   }
+
+  @Test
+  void testMethod_toString() {
+    assertThat(new Char(0x41).toString()).isEqualTo("A");
+    assertThat(new Char(0x20000).toString()).isEqualTo("\uD840\uDC00");
+  }
 }
