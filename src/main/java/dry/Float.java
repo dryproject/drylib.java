@@ -79,4 +79,9 @@ public strictfp class Float extends Number {
   public float floatValue() {
     return (float)this.value;
   }
+
+  @Override @NotNull
+  public String toString() {
+    return java.lang.Double.toString(this.value);
+  }
 }

@@ -13,4 +13,9 @@ class TestFloat64 {
     assertThatNullPointerException().isThrownBy(() -> { new Float64((java.lang.Double)null); });
     assertThatNullPointerException().isThrownBy(() -> { new Float64((java.lang.Float)null); });
   }
+
+  @Test
+  void testMethod_toString() {
+    assertThat(new Float64(1.23d).toString()).isEqualTo("1.23");
+  }
 }
