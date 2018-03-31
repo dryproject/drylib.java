@@ -21,7 +21,8 @@ class Char extends java.lang.Object {
   public final int value;
 
   public Char(final int value) {
-    // TODO: input validation
+    if (value < MIN_VALUE) throw new ArithmeticException();
+    if (value > MAX_VALUE) throw new ArithmeticException();
     this.value = value;
   }
 
