@@ -13,6 +13,18 @@ public final strictfp class Complex extends Number {
   public final Real real;
   public final Real imaginary;
 
+  public Complex(final long real,
+                 final long imaginary) {
+    this.real = new Real(real);
+    this.imaginary = new Real(imaginary);
+  }
+
+  public Complex(final double real,
+                 final double imaginary) {
+    this.real = new Real(real);
+    this.imaginary = new Real(imaginary);
+  }
+
   public Complex(@NotNull final Real real,
                  @NotNull final Real imaginary) {
     if (real == null) throw new NullPointerException();

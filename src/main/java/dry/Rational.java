@@ -13,6 +13,12 @@ public final strictfp class Rational extends Number {
   public final Integer numerator;
   public final Integer denominator;
 
+  public Rational(final long numerator,
+                  final long denominator) {
+    this.numerator = new Integer(numerator);
+    this.denominator = new Integer(denominator);
+  }
+
   public Rational(@NotNull final Integer numerator,
                   @NotNull final Integer denominator) {
     if (numerator == null) throw new NullPointerException();

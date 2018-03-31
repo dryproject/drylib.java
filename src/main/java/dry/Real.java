@@ -19,6 +19,10 @@ public final strictfp class Real extends Number {
     this.value = BigDecimal.valueOf(value);
   }
 
+  public Real(final long value) {
+    this.value = BigDecimal.valueOf(value);
+  }
+
   public Real(@NotNull final BigDecimal value) {
     if (value == null) throw new NullPointerException();
     this.value = value;
