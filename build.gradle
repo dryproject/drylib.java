@@ -17,8 +17,15 @@ repositories {
 
 dependencies {
   compile 'com.intellij:annotations:+@jar'
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
+  testCompile 'org.assertj:assertj-core:3.9.1'
 }
 
 tasks.withType(JavaCompile).all {
   options.compilerArgs.add('-Xlint:all')
+}
+
+test {
+  useJUnitPlatform()
 }
