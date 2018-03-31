@@ -16,9 +16,9 @@ final class Int128 extends Int {
 
   public static final BigInteger MAX_VALUE = BigInteger.valueOf(Long.MAX_VALUE); // FIXME
 
-  public static final Int128 MIN = new Int128(MIN_VALUE);
+  public static final Int128 MIN = new Int128(Long.MIN_VALUE);
 
-  public static final Int128 MAX = new Int128(MAX_VALUE);
+  public static final Int128 MAX = new Int128(Long.MAX_VALUE);
 
   public Int128(final long value) {
     super(BigInteger.valueOf(value), MIN_VALUE, MAX_VALUE);
