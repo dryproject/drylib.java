@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Rational number (arbitrary size).
  */
-final class Rational extends Number {
+public final class Rational extends Number {
   private static final long serialVersionUID = 1L;
 
   public final Integer numerator;

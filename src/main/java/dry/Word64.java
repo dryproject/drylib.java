@@ -5,7 +5,7 @@ package dry;
 /**
  * Machine word (64-bit).
  */
-final class Word64 extends Word {
+public final class Word64 extends Word {
   private static final long serialVersionUID = 1L;
 
   public static final long MIN_VALUE = 0L;

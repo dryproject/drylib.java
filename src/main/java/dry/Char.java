@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Character (Unicode code point).
  */
-class Char extends java.lang.Object {
+public class Char extends java.lang.Object {
   private static final long serialVersionUID = 1L;
 
   public static final int MIN_VALUE = Character.MIN_CODE_POINT;

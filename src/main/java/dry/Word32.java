@@ -5,7 +5,7 @@ package dry;
 /**
  * Machine word (32-bit).
  */
-final class Word32 extends Word {
+public final class Word32 extends Word {
   private static final long serialVersionUID = 1L;
 
   public static final long MIN_VALUE = 0L;

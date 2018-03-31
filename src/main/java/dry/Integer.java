@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Integer number (arbitrary size).
  */
-class Integer extends Number {
+public class Integer extends Number {
   private static final long serialVersionUID = 1L;
 
   public static final Integer ZERO = Natural.ZERO;

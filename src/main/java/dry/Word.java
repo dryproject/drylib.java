@@ -5,7 +5,7 @@ package dry;
 /**
  * Machine word (native size).
  */
-class Word extends Number {
+public class Word extends Number {
   private static final long serialVersionUID = 1L;
 
   public static final long MIN_VALUE = Word64.MIN_VALUE;

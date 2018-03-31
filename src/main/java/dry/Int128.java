@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Integer number (128-bit).
  */
-final class Int128 extends Int {
+public final class Int128 extends Int {
   private static final long serialVersionUID = 1L;
 
   public static final BigInteger MIN_VALUE = BigInteger.valueOf(Long.MIN_VALUE); // FIXME

@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Integer number (32-bit).
  */
-final class Int32 extends Int {
+public final class Int32 extends Int {
   private static final long serialVersionUID = 1L;
 
   public static final long MIN_VALUE = java.lang.Integer.MIN_VALUE;

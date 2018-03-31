@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Integer number (8-bit).
  */
-final class Int8 extends Int {
+public final class Int8 extends Int {
   private static final long serialVersionUID = 1L;
 
   public static final long MIN_VALUE = Byte.MIN_VALUE;
