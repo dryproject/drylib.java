@@ -2,6 +2,8 @@
 
 package dry;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Floating-point number (32-bit single-precision)
  */
@@ -16,11 +18,21 @@ final class Float32 extends Float {
 
   public static final Float32 MAX = new Float32(MAX_VALUE);
 
-  public Float32(final float value) {
-    super((double)value);
+  public Float32(final double value) {
+    // TODO: check for underflow/overflow
+    super(value);
   }
 
-  public Float32(final double value) {
+  public Float32(final float value) {
+    super(value);
+  }
+
+  public Float32(@NotNull final java.lang.Double value) {
+    // TODO: check for underflow/overflow
+    super(value);
+  }
+
+  public Float32(@NotNull final java.lang.Float value) {
     super(value);
   }
 }

@@ -2,6 +2,8 @@
 
 package dry;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Floating-point number (native size).
  */
@@ -20,6 +22,20 @@ class Float extends Number {
 
   public Float(final double value) {
     this.value = value;
+  }
+
+  public Float(final float value) {
+    this.value = (double)value;
+  }
+
+  public Float(@NotNull final java.lang.Double value) {
+    if (value == null) throw new NullPointerException();
+    this.value = value.doubleValue();
+  }
+
+  public Float(@NotNull final java.lang.Float value) {
+    if (value == null) throw new NullPointerException();
+    this.value = (double)value.floatValue();
   }
 
   public double getValue() {
