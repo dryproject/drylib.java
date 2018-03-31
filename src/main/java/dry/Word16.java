@@ -2,6 +2,8 @@
 
 package dry;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Machine word (16-bit).
  */
@@ -18,5 +20,10 @@ public final class Word16 extends Word {
 
   public Word16(final long value) {
     super(value);
+  }
+
+  @Override @NotNull
+  public String toString() {
+    return java.lang.String.format("0x%04x", this.value);
   }
 }

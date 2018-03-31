@@ -12,4 +12,10 @@ class TestWord64 {
   void testConstructWithNull() {
     //assertThatNullPointerException().isThrownBy(() -> { new Word64(null); });
   }
+
+  @Test
+  void testMethod_toString() {
+    assertThat(Word64.MIN.toString()).isEqualTo("0x0000000000000000");
+    assertThat(Word64.MAX.toString()).isEqualTo("0xffffffffffffffff");
+  }
 }

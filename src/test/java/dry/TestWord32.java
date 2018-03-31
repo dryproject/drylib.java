@@ -12,4 +12,10 @@ class TestWord32 {
   void testConstructWithNull() {
     //assertThatNullPointerException().isThrownBy(() -> { new Word32(null); });
   }
+
+  @Test
+  void testMethod_toString() {
+    assertThat(Word32.MIN.toString()).isEqualTo("0x00000000");
+    assertThat(Word32.MAX.toString()).isEqualTo("0xffffffff");
+  }
 }

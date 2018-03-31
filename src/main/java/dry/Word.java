@@ -2,6 +2,8 @@
 
 package dry;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Machine word (native size).
  */
@@ -34,5 +36,10 @@ public class Word extends Number {
   @Override
   public double doubleValue() {
     return (double)this.value;
+  }
+
+  @Override @NotNull
+  public String toString() {
+    return java.lang.String.format("0x%016x", this.value);
   }
 }

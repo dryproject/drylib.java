@@ -12,4 +12,10 @@ class TestWord8 {
   void testConstructWithNull() {
     //assertThatNullPointerException().isThrownBy(() -> { new Word8(null); });
   }
+
+  @Test
+  void testMethod_toString() {
+    assertThat(Word8.MIN.toString()).isEqualTo("0x00");
+    assertThat(Word8.MAX.toString()).isEqualTo("0xff");
+  }
 }
