@@ -9,7 +9,7 @@ import org.junit.jupiter.api.*;
 class TestInteger {
 
   @Test
-  void test() {
-    assertThat(42).isEqualTo(42);
+  void testConstructWithNull() {
+    assertThatNullPointerException().isThrownBy(() -> { new Integer(null); });
   }
 }

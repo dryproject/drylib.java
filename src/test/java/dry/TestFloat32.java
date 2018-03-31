@@ -9,7 +9,8 @@ import org.junit.jupiter.api.*;
 class TestFloat32 {
 
   @Test
-  void test() {
-    assertThat(42).isEqualTo(42);
+  void testConstructWithNull() {
+    assertThatNullPointerException().isThrownBy(() -> { new Float32((java.lang.Double)null); });
+    assertThatNullPointerException().isThrownBy(() -> { new Float32((java.lang.Float)null); });
   }
 }

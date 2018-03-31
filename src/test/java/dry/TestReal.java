@@ -6,10 +6,14 @@ import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.*;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
 class TestReal {
 
   @Test
-  void test() {
-    assertThat(42).isEqualTo(42);
+  void testConstructWithNull() {
+    assertThatNullPointerException().isThrownBy(() -> { new Real((BigDecimal)null); });
+    assertThatNullPointerException().isThrownBy(() -> { new Real((BigInteger)null); });
   }
 }

@@ -9,7 +9,7 @@ import org.junit.jupiter.api.*;
 class TestChar {
 
   @Test
-  void test() {
-    assertThat(42).isEqualTo(42);
+  void testConstructWithNull() {
+    assertThatNullPointerException().isThrownBy(() -> { new Char(null); });
   }
 }

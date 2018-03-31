@@ -9,7 +9,13 @@ import org.junit.jupiter.api.*;
 class TestBool {
 
   @Test
-  void test() {
-    assertThat(42).isEqualTo(42);
+  void testConstructWithNull() {
+    assertThatNullPointerException().isThrownBy(() -> { new Bool(null); });
+  }
+
+  @Test
+  void testGetValue() {
+    assertThat(Bool.TRUE.getValue()).isEqualTo(true);
+    assertThat(Bool.FALSE.getValue()).isEqualTo(false);
   }
 }

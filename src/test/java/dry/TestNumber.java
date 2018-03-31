@@ -7,9 +7,4 @@ import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.*;
 
 class TestNumber {
-
-  @Test
-  void test() {
-    assertThat(42).isEqualTo(42);
-  }
 }
