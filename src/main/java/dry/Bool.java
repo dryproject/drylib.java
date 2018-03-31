@@ -28,4 +28,9 @@ public class Bool extends java.lang.Object {
   public boolean getValue() {
     return this.value;
   }
+
+  @Override @NotNull
+  public String toString() {
+    return java.lang.Boolean.toString(this.value);
+  }
 }
