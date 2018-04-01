@@ -2,7 +2,10 @@
 
 package dry;
 
+import java.util.Objects;
+
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Boolean (true or false).
@@ -29,6 +32,20 @@ public class Bool extends java.lang.Object {
 
   public boolean getValue() {
     return this.value;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(this.value);
+  }
+
+  @Override
+  public boolean equals(@Nullable final Object object) {
+    if (this == object) return true;
+    if (object == null) return false;
+    if (!(object instanceof Bool)) return false;
+    final Bool that = (Bool)object;
+    return this.value == that.value;
   }
 
   @Override @NotNull
