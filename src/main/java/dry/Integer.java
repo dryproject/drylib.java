@@ -3,6 +3,7 @@
 package dry;
 
 import java.math.BigInteger;
+import java.util.Objects;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -88,6 +89,20 @@ public strictfp class Integer extends Number {
   @Override
   public float floatValue() {
     return this.value.floatValue();
+  }
+
+  @Override
+  public int hashCode() {
+    return this.value.hashCode();
+  }
+
+  @Override
+  public boolean equals(@Nullable final Object object) {
+    if (this == object) return true;
+    if (object == null) return false;
+    if (!(object instanceof Integer)) return false;
+    final Integer that = (Integer)object;
+    return Objects.equals(this.value, that.value);
   }
 
   @Override @NotNull
