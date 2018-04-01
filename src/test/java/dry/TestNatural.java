@@ -12,4 +12,12 @@ class TestNatural {
   void testConstructWithNull() {
     assertThatNullPointerException().isThrownBy(() -> { new Natural(null); });
   }
+
+  @Test
+  void testMethod_toString() {
+    assertThat(Natural.ZERO.toString()).isEqualTo("0");
+    assertThat(Natural.ONE.toString()).isEqualTo("1");
+    assertThat(Natural.TWO.toString()).isEqualTo("2");
+    assertThat(Natural.TEN.toString()).isEqualTo("10");
+  }
 }
