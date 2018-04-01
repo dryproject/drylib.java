@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NotNull;
 public final strictfp class Int128 extends Int {
   private static final long serialVersionUID = 1L;
 
+  public static final int SIZE = 16; // bytes
+
   public static final BigInteger MIN_VALUE = BigInteger.valueOf(java.lang.Long.MIN_VALUE); // FIXME
 
   public static final BigInteger MAX_VALUE = BigInteger.valueOf(java.lang.Long.MAX_VALUE); // FIXME

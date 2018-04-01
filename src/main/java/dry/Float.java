@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 public strictfp class Float extends Number {
   private static final long serialVersionUID = 1L;
 
+  public static final int SIZE = Float64.SIZE;
+
   public static final double MIN_VALUE = Float64.MIN_VALUE;
 
   public static final double MAX_VALUE = Float64.MAX_VALUE;

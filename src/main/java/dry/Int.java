@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NotNull;
 public strictfp class Int extends Integer {
   private static final long serialVersionUID = 1L;
 
+  public static final int SIZE = Int64.SIZE;
+
   public static final long MIN_VALUE = Int64.MIN_VALUE;
 
   public static final long MAX_VALUE = Int64.MAX_VALUE;

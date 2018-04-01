@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 public class Bool extends java.lang.Object {
   private static final long serialVersionUID = 1L;
 
+  public static final int SIZE = 1; // bytes
+
   public static final Bool FALSE = new Bool(false);
 
   public static final Bool TRUE = new Bool(true);

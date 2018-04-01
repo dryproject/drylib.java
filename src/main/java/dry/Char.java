@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 public class Char extends java.lang.Object {
   private static final long serialVersionUID = 1L;
 
+  public static final int SIZE = 4; // bytes
+
   public static final int MIN_VALUE = java.lang.Character.MIN_CODE_POINT;
 
   public static final int MAX_VALUE = java.lang.Character.MAX_CODE_POINT;

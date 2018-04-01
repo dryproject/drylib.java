@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 public final class Word32 extends Word {
   private static final long serialVersionUID = 1L;
 
+  public static final int SIZE = 4; // bytes
+
   public static final long MIN_VALUE = 0L;
 
   public static final long MAX_VALUE = 0xFFFFFFFFL;
