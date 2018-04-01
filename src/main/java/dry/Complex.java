@@ -2,7 +2,10 @@
 
 package dry;
 
+import java.util.Objects;
+
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Complex number (arbitrary size).
@@ -41,6 +44,21 @@ public final strictfp class Complex extends Number {
   @NotNull
   public Real getImaginary() {
     return this.imaginary;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(this.real, this.imaginary);
+  }
+
+  @Override
+  public boolean equals(@Nullable final Object object) {
+    if (this == object) return true;
+    if (object == null) return false;
+    if (!(object instanceof Complex)) return false;
+    final Complex that = (Complex)object;
+    return Objects.equals(this.real, that.real) &&
+      Objects.equals(this.imaginary, that.imaginary);
   }
 
   @Override @NotNull
