@@ -4,8 +4,10 @@ package dry;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Objects;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Real number (arbitrary size).
@@ -70,6 +72,20 @@ public final strictfp class Real extends Number {
   @Override
   public float floatValue() {
     return this.value.floatValue();
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(this.value);
+  }
+
+  @Override
+  public boolean equals(@Nullable final Object object) {
+    if (this == object) return true;
+    if (object == null) return false;
+    if (!(object instanceof Real)) return false;
+    final Real that = (Real)object;
+    return Objects.equals(this.value, that.value);
   }
 
   @Override @NotNull
