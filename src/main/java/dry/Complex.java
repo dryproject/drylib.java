@@ -42,4 +42,18 @@ public final strictfp class Complex extends Number {
   public Real getImaginary() {
     return this.imaginary;
   }
+
+  @Override @NotNull
+  public String toString() {
+    final StringBuilder buffer = new StringBuilder();
+
+    buffer.append(this.real.toString());
+    if (this.imaginary.signum() >= 0) {
+      buffer.append('+');
+    }
+    buffer.append(this.imaginary.toString());
+    buffer.append('i');
+
+    return buffer.toString();
+  }
 }

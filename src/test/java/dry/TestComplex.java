@@ -12,4 +12,11 @@ class TestComplex {
   void testConstructWithNull() {
     assertThatNullPointerException().isThrownBy(() -> { new Complex(null, null); });
   }
+
+  @Test
+  void testMethod_toString() {
+    assertThat(new Complex(1.0, 3.0).toString()).isEqualTo("1.0+3.0i");
+    assertThat(new Complex(1.0, -3.0).toString()).isEqualTo("1.0-3.0i");
+    assertThat(new Complex(-1.0, 0.0).toString()).isEqualTo("-1.0+0.0i");
+  }
 }
