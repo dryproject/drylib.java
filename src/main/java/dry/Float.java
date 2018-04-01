@@ -2,7 +2,10 @@
 
 package dry;
 
+import java.util.Objects;
+
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Floating-point number (native size).
@@ -80,6 +83,20 @@ public strictfp class Float extends Number {
   @Override
   public float floatValue() {
     return (float)this.value;
+  }
+
+  @Override
+  public int hashCode() {
+    return java.lang.Double.hashCode(this.value);
+  }
+
+  @Override
+  public boolean equals(@Nullable final Object object) {
+    if (this == object) return true;
+    if (object == null) return false;
+    if (!(object instanceof Float)) return false;
+    final Float that = (Float)object;
+    return java.lang.Double.compare(this.value, that.value) == 0;
   }
 
   @Override @NotNull
