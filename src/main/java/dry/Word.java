@@ -3,6 +3,7 @@
 package dry;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Machine word (native size).
@@ -38,6 +39,20 @@ public class Word extends Number {
   @Override
   public double doubleValue() {
     return (double)this.value;
+  }
+
+  @Override
+  public int hashCode() {
+    return java.lang.Long.hashCode(this.value);
+  }
+
+  @Override
+  public boolean equals(@Nullable final Object object) {
+    if (this == object) return true;
+    if (object == null) return false;
+    if (!(object instanceof Word)) return false;
+    final Word that = (Word)object;
+    return this.value == that.value;
   }
 
   @Override @NotNull
