@@ -11,5 +11,12 @@ class TestRational {
   @Test
   void testConstructWithNull() {
     assertThatNullPointerException().isThrownBy(() -> { new Rational(null, null); });
+    assertThatNullPointerException().isThrownBy(() -> { new Rational(new Integer(1), null); });
+    assertThatNullPointerException().isThrownBy(() -> { new Rational(null, new Integer(1)); });
+  }
+
+  @Test
+  void testMethod_toString() {
+    assertThat(new Rational(1, 2).toString()).isEqualTo("1/2");
   }
 }

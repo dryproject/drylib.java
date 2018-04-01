@@ -36,4 +36,9 @@ public final strictfp class Rational extends Number {
   public Integer getDenominator() {
     return this.denominator;
   }
+
+  @Override @NotNull
+  public String toString() {
+    return java.lang.String.format("%s/%s", this.numerator, this.denominator);
+  }
 }
