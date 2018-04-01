@@ -2,7 +2,10 @@
 
 package dry;
 
+import java.util.Objects;
+
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Rational number (arbitrary size).
@@ -35,6 +38,21 @@ public final strictfp class Rational extends Number {
   @NotNull
   public Integer getDenominator() {
     return this.denominator;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(this.numerator, this.denominator);
+  }
+
+  @Override
+  public boolean equals(@Nullable final Object object) {
+    if (this == object) return true;
+    if (object == null) return false;
+    if (!(object instanceof Rational)) return false;
+    final Rational that = (Rational)object;
+    return Objects.equals(this.numerator, that.numerator) &&
+      Objects.equals(this.denominator, that.denominator);
   }
 
   @Override @NotNull
