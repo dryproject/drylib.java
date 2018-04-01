@@ -8,6 +8,10 @@ package dry;
 public abstract strictfp class Number extends java.lang.Number implements java.io.Serializable {
   private static final long serialVersionUID = 1L;
 
+  protected int signum() {
+    return java.lang.Double.compare(this.doubleValue(), 0);
+  }
+
   @Override
   public long longValue() {
     return 0; // TODO

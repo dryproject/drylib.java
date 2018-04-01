@@ -32,6 +32,11 @@ public final strictfp class Real extends Number {
     this(new BigDecimal(value)); // throws NullPointerException if needed
   }
 
+  @Override
+  protected int signum() {
+    return this.value.signum();
+  }
+
   @NotNull
   public BigDecimal getValue() {
     return this.value;
