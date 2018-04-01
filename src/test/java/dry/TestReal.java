@@ -16,4 +16,11 @@ class TestReal {
     assertThatNullPointerException().isThrownBy(() -> { new Real((BigDecimal)null); });
     assertThatNullPointerException().isThrownBy(() -> { new Real((BigInteger)null); });
   }
+
+  @Test
+  void testMethod_toString() {
+    assertThat(new Real(0).toString()).isEqualTo("0");
+    assertThat(new Real(42).toString()).isEqualTo("42");
+    assertThat(new Real(1.23).toString()).isEqualTo("1.23");
+  }
 }

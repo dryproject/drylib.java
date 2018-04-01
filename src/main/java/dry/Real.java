@@ -66,4 +66,9 @@ public final strictfp class Real extends Number {
   public float floatValue() {
     return this.value.floatValue();
   }
+
+  @Override @NotNull
+  public String toString() {
+    return this.value.toString();
+  }
 }
