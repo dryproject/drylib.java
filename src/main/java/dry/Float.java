@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Floating-point number (native size).
  */
-public strictfp class Float extends AbstractNumber implements Number {
+public strictfp class Float extends AbstractNumber implements Real {
   private static final long serialVersionUID = 1L;
 
   public static final int SIZE = Float64.SIZE;
@@ -53,6 +53,13 @@ public strictfp class Float extends AbstractNumber implements Number {
 
   public double getValue() {
     return this.value;
+  }
+
+  @Override
+  public int signum() {
+    if (this.value < 0) return -1;
+    if (this.value > 0) return +1;
+    return 0;
   }
 
   @Override
