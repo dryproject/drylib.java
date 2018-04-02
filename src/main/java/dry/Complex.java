@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Complex number (arbitrary size).
  */
-public final strictfp class Complex extends Number {
+public final strictfp class Complex extends AbstractNumber implements Number {
   private static final long serialVersionUID = 1L;
 
   public final Real real;
@@ -18,14 +18,14 @@ public final strictfp class Complex extends Number {
 
   public Complex(final long real,
                  final long imaginary) {
-    this.real = new Real(real);
-    this.imaginary = new Real(imaginary);
+    this.real = Real.valueOf(real);
+    this.imaginary = Real.valueOf(imaginary);
   }
 
   public Complex(final double real,
                  final double imaginary) {
-    this.real = new Real(real);
-    this.imaginary = new Real(imaginary);
+    this.real = Real.valueOf(real);
+    this.imaginary = Real.valueOf(imaginary);
   }
 
   public Complex(@NotNull final Real real,

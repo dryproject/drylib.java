@@ -13,14 +13,14 @@ class TestReal {
 
   @Test
   void testConstructWithNull() {
-    assertThatNullPointerException().isThrownBy(() -> { new Real((BigDecimal)null); });
-    assertThatNullPointerException().isThrownBy(() -> { new Real((BigInteger)null); });
+    assertThatNullPointerException().isThrownBy(() -> { Real.valueOf((BigDecimal)null); });
+    assertThatNullPointerException().isThrownBy(() -> { Real.valueOf((BigInteger)null); });
   }
 
   @Test
   void testMethod_toString() {
-    assertThat(new Real(0).toString()).isEqualTo("0");
-    assertThat(new Real(42).toString()).isEqualTo("42");
-    assertThat(new Real(1.23).toString()).isEqualTo("1.23");
+    assertThat(Real.valueOf(0).toString()).isEqualTo("0");
+    assertThat(Real.valueOf(42).toString()).isEqualTo("42");
+    assertThat(Real.valueOf(1.23).toString()).isEqualTo("1.23");
   }
 }

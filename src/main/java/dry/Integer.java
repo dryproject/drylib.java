@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Integer number (arbitrary size).
  */
-public strictfp class Integer extends Number {
+public strictfp class Integer extends AbstractNumber implements Number {
   private static final long serialVersionUID = 1L;
 
   public static final Integer ZERO = Natural.ZERO;

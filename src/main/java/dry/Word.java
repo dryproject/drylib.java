@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Machine word (native size).
  */
-public class Word extends Number {
+public class Word extends AbstractNumber implements Number {
   private static final long serialVersionUID = 1L;
 
   public static final int SIZE = Word64.SIZE;

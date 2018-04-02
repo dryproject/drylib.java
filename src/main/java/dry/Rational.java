@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Rational number (arbitrary size).
  */
-public final strictfp class Rational extends Number {
+public final strictfp class Rational extends AbstractNumber implements Number {
   private static final long serialVersionUID = 1L;
 
   public final Integer numerator;
