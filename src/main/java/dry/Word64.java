@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Machine word (64-bit).
  */
-public final class Word64 extends Word {
+public final class Word64 extends AbstractWord implements Word {
   @NotNull
   public static Word64 valueOf(final long value) {
     return new Word64(value);
