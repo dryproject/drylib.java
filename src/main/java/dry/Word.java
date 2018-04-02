@@ -9,6 +9,11 @@ import org.jetbrains.annotations.Nullable;
  * Machine word (native size).
  */
 public class Word extends ExactNumber implements Number {
+  @NotNull
+  public static Word valueOf(final long value) {
+    return Word64.valueOf(value);
+  }
+
   private static final long serialVersionUID = 1L;
 
   public static final int SIZE = Word64.SIZE;
@@ -23,7 +28,7 @@ public class Word extends ExactNumber implements Number {
 
   public final long value;
 
-  public Word(final long value) {
+  protected Word(final long value) {
     this.value = value;
   }
 

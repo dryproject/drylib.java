@@ -8,6 +8,11 @@ import org.jetbrains.annotations.NotNull;
  * Machine word (32-bit).
  */
 public final class Word32 extends Word {
+  @NotNull
+  public static Word32 valueOf(final long value) {
+    return new Word32(value);
+  }
+
   private static final long serialVersionUID = 1L;
 
   public static final int SIZE = 4; // bytes
@@ -20,7 +25,7 @@ public final class Word32 extends Word {
 
   public static final Word32 MAX = new Word32(MAX_VALUE);
 
-  public Word32(final long value) {
+  protected Word32(final long value) {
     super(value);
   }
 

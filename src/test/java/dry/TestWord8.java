@@ -10,7 +10,7 @@ class TestWord8 {
 
   @Test
   void testConstructWithNull() {
-    //assertThatNullPointerException().isThrownBy(() -> { new Word8(null); });
+    //assertThatNullPointerException().isThrownBy(() -> { Word8.valueOf(null); });
   }
 
   @Test

@@ -8,6 +8,11 @@ import org.jetbrains.annotations.NotNull;
  * Machine word (64-bit).
  */
 public final class Word64 extends Word {
+  @NotNull
+  public static Word64 valueOf(final long value) {
+    return new Word64(value);
+  }
+
   private static final long serialVersionUID = 1L;
 
   public static final int SIZE = 8; // bytes
@@ -20,7 +25,7 @@ public final class Word64 extends Word {
 
   public static final Word64 MAX = new Word64(MAX_VALUE);
 
-  public Word64(final long value) {
+  protected Word64(final long value) {
     super(value);
   }
 
