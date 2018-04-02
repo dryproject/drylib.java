@@ -11,6 +11,16 @@ import org.jetbrains.annotations.Nullable;
  * Boolean (true or false).
  */
 public class Bool extends java.lang.Object {
+  @NotNull
+  public static Bool valueOf(final boolean value) {
+    return value ? TRUE : FALSE;
+  }
+
+  @NotNull
+  public static Bool valueOf(@NotNull final java.lang.Boolean value) {
+    return valueOf(Objects.requireNonNull(value).booleanValue());
+  }
+
   private static final long serialVersionUID = 1L;
 
   public static final int SIZE = 1; // bytes
@@ -21,13 +31,8 @@ public class Bool extends java.lang.Object {
 
   public final boolean value;
 
-  public Bool(final boolean value) {
+  protected Bool(final boolean value) {
     this.value = value;
-  }
-
-  public Bool(@NotNull final java.lang.Boolean value) {
-    if (value == null) throw new NullPointerException();
-    this.value = value.booleanValue();
   }
 
   public boolean getValue() {

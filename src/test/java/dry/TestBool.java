@@ -10,7 +10,7 @@ class TestBool {
 
   @Test
   void testConstructWithNull() {
-    assertThatNullPointerException().isThrownBy(() -> { new Bool(null); });
+    assertThatNullPointerException().isThrownBy(() -> { Bool.valueOf(null); });
   }
 
   @Test
