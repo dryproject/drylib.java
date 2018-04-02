@@ -6,4 +6,8 @@ package dry;
  * Interface for number types.
  */
 public strictfp interface Number {
+
+  public boolean isExact();
+
+  public boolean isInexact();
 }

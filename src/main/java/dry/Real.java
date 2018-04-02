@@ -38,7 +38,7 @@ public strictfp interface Real {
   /**
    * @private
    */
-  final strictfp class BigReal extends AbstractNumber implements Real {
+  final strictfp class BigReal extends ExactNumber implements Real {
     private static final long serialVersionUID = 1L;
 
     public final BigDecimal value;

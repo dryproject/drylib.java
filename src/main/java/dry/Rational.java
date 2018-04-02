@@ -29,7 +29,7 @@ public strictfp interface Rational extends Real {
   @NotNull
   public Integer getDenominator();
 
-  final strictfp class BigRational extends AbstractNumber implements Rational {
+  final strictfp class BigRational extends ExactNumber implements Rational {
     private static final long serialVersionUID = 1L;
 
     public final Integer numerator;

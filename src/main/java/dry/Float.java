@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Floating-point number (native size).
  */
-public strictfp class Float extends AbstractNumber implements Real {
+public strictfp class Float extends InexactNumber implements Real {
   private static final long serialVersionUID = 1L;
 
   public static final int SIZE = Float64.SIZE;

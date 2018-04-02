@@ -3,13 +3,18 @@
 package dry;
 
 /**
- * Base class for number types.
+ * @private
  */
 public abstract strictfp class AbstractNumber extends java.lang.Number implements Number, java.io.Serializable {
   private static final long serialVersionUID = 1L;
 
   protected int signum() {
     return java.lang.Double.compare(this.doubleValue(), 0);
+  }
+
+  @Override
+  public boolean isInexact() {
+    return !this.isExact();
   }
 
   @Override

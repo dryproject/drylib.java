@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Complex number (arbitrary size).
  */
-public final strictfp class Complex extends AbstractNumber implements Number {
+public final strictfp class Complex extends ExactNumber implements Number {
   private static final long serialVersionUID = 1L;
 
   public final Real real;

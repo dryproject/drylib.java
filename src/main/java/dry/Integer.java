@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Integer number (arbitrary size).
  */
-public strictfp class Integer extends AbstractNumber implements Rational {
+public strictfp class Integer extends ExactNumber implements Rational {
   @NotNull
   public static Integer valueOf(final long value) {
     return new Integer(BigInteger.valueOf(value));
