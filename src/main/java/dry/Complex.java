@@ -10,72 +10,83 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Complex number (arbitrary size).
  */
-public final strictfp class Complex extends ExactNumber implements Number {
+public strictfp interface Complex extends Number {
   @NotNull
   public static Complex valueOf(final long real,
                                 final long imaginary) {
-    return new Complex(Real.valueOf(real), Real.valueOf(imaginary));
+    return new RealComplex(Real.valueOf(real), Real.valueOf(imaginary));
   }
 
   @NotNull
   public static Complex valueOf(final double real,
                                 final double imaginary) {
-    return new Complex(Real.valueOf(real), Real.valueOf(imaginary));
+    return new RealComplex(Real.valueOf(real), Real.valueOf(imaginary));
   }
 
   @NotNull
   public static Complex valueOf(@NotNull final Real real,
                                 @NotNull final Real imaginary) {
-    return new Complex(real, imaginary);
-  }
-
-  private static final long serialVersionUID = 1L;
-
-  public final Real real;
-  public final Real imaginary;
-
-  protected Complex(@NotNull final Real real,
-                    @NotNull final Real imaginary) {
-    this.real = Objects.requireNonNull(real);
-    this.imaginary = Objects.requireNonNull(imaginary);
+    return new RealComplex(real, imaginary);
   }
 
   @NotNull
-  public Real getReal() {
-    return this.real;
-  }
+  public Real getReal();
 
   @NotNull
-  public Real getImaginary() {
-    return this.imaginary;
-  }
+  public Real getImaginary();
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(this.real, this.imaginary);
-  }
+  /**
+    * @private
+    */
+  final strictfp class RealComplex extends ExactNumber implements Complex {
+    private static final long serialVersionUID = 1L;
 
-  @Override
-  public boolean equals(@Nullable final Object object) {
-    if (this == object) return true;
-    if (object == null) return false;
-    if (!(object instanceof Complex)) return false;
-    final Complex that = (Complex)object;
-    return Objects.equals(this.real, that.real) &&
-      Objects.equals(this.imaginary, that.imaginary);
-  }
+    public final Real real;
+    public final Real imaginary;
 
-  @Override @NotNull
-  public String toString() {
-    final StringBuilder buffer = new StringBuilder();
-
-    buffer.append(this.real.toString());
-    if (this.imaginary.signum() >= 0) {
-      buffer.append('+');
+    protected RealComplex(@NotNull final Real real,
+                          @NotNull final Real imaginary) {
+      this.real = Objects.requireNonNull(real);
+      this.imaginary = Objects.requireNonNull(imaginary);
     }
-    buffer.append(this.imaginary.toString());
-    buffer.append('i');
 
-    return buffer.toString();
+    @Override @NotNull
+    public Real getReal() {
+      return this.real;
+    }
+
+    @Override @NotNull
+    public Real getImaginary() {
+      return this.imaginary;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(this.real, this.imaginary);
+    }
+
+    @Override
+    public boolean equals(@Nullable final Object object) {
+      if (this == object) return true;
+      if (object == null) return false;
+      if (!(object instanceof RealComplex)) return false;
+      final RealComplex that = (RealComplex)object;
+      return Objects.equals(this.real, that.real) &&
+        Objects.equals(this.imaginary, that.imaginary);
+    }
+
+    @Override @NotNull
+    public String toString() {
+      final StringBuilder buffer = new StringBuilder();
+
+      buffer.append(this.real.toString());
+      if (this.imaginary.signum() >= 0) {
+        buffer.append('+');
+      }
+      buffer.append(this.imaginary.toString());
+      buffer.append('i');
+
+      return buffer.toString();
+    }
   }
 }
