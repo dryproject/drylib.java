@@ -11,29 +11,33 @@ import org.jetbrains.annotations.Nullable;
  * Complex number (arbitrary size).
  */
 public final strictfp class Complex extends ExactNumber implements Number {
+  @NotNull
+  public static Complex valueOf(final long real,
+                                final long imaginary) {
+    return new Complex(Real.valueOf(real), Real.valueOf(imaginary));
+  }
+
+  @NotNull
+  public static Complex valueOf(final double real,
+                                final double imaginary) {
+    return new Complex(Real.valueOf(real), Real.valueOf(imaginary));
+  }
+
+  @NotNull
+  public static Complex valueOf(@NotNull final Real real,
+                                @NotNull final Real imaginary) {
+    return new Complex(real, imaginary);
+  }
+
   private static final long serialVersionUID = 1L;
 
   public final Real real;
   public final Real imaginary;
 
-  public Complex(final long real,
-                 final long imaginary) {
-    this.real = Real.valueOf(real);
-    this.imaginary = Real.valueOf(imaginary);
-  }
-
-  public Complex(final double real,
-                 final double imaginary) {
-    this.real = Real.valueOf(real);
-    this.imaginary = Real.valueOf(imaginary);
-  }
-
-  public Complex(@NotNull final Real real,
-                 @NotNull final Real imaginary) {
-    if (real == null) throw new NullPointerException();
-    if (imaginary == null) throw new NullPointerException();
-    this.real = real;
-    this.imaginary = imaginary;
+  protected Complex(@NotNull final Real real,
+                    @NotNull final Real imaginary) {
+    this.real = Objects.requireNonNull(real);
+    this.imaginary = Objects.requireNonNull(imaginary);
   }
 
   @NotNull
