@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Rational number (arbitrary size).
  */
-public final strictfp class Rational extends AbstractNumber implements Number {
+public final strictfp class Rational extends AbstractNumber implements Real {
   private static final long serialVersionUID = 1L;
 
   public final Integer numerator;
@@ -38,6 +38,11 @@ public final strictfp class Rational extends AbstractNumber implements Number {
   @NotNull
   public Integer getDenominator() {
     return this.denominator;
+  }
+
+  @Override
+  public int signum() {
+    return this.numerator.value.signum();
   }
 
   @Override
