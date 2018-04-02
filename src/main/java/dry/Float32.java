@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Floating-point number (32-bit single-precision)
  */
-public final strictfp class Float32 extends Float {
+public final strictfp class Float32 extends AbstractFloat implements Float {
   @NotNull
   public static Float32 valueOf(final double value) {
     return new Float32(value);
