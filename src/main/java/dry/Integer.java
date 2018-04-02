@@ -80,6 +80,16 @@ public strictfp class Integer extends ExactNumber implements Rational {
     return Integer.ONE;
   }
 
+  @Override @NotNull
+  public Real getReal() {
+    return this;
+  }
+
+  @Override @NotNull
+  public Real getImaginary() {
+    return Integer.ZERO;
+  }
+
   @Override
   public int signum() {
     return this.value.signum();

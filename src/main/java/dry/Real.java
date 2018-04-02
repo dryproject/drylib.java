@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Real number (arbitrary size).
  */
-public strictfp interface Real extends Number {
+public strictfp interface Real extends Complex {
   @NotNull
   public static Real valueOf(final double value) {
     return new BigReal(BigDecimal.valueOf(value));
@@ -47,14 +47,24 @@ public strictfp interface Real extends Number {
       this.value = Objects.requireNonNull(value);
     }
 
-    @Override
-    public int signum() {
-      return this.value.signum();
-    }
-
     @NotNull
     public BigDecimal getValue() {
       return this.value;
+    }
+
+    @NotNull
+    public Real getReal() {
+      return this;
+    }
+
+    @NotNull
+    public Real getImaginary() {
+      return Integer.ZERO;
+    }
+
+    @Override
+    public int signum() {
+      return this.value.signum();
     }
 
     @Override

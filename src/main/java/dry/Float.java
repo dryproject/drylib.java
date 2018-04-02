@@ -55,6 +55,16 @@ public strictfp class Float extends InexactNumber implements Real {
     return this.value;
   }
 
+  @Override @NotNull
+  public Real getReal() {
+    return this;
+  }
+
+  @Override @NotNull
+  public Real getImaginary() {
+    return Integer.ZERO;
+  }
+
   @Override
   public int signum() {
     if (this.value < 0) return -1;

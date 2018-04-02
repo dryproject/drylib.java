@@ -51,6 +51,16 @@ public strictfp interface Rational extends Real {
       return this.denominator;
     }
 
+    @Override @NotNull
+    public Real getReal() {
+      return this;
+    }
+
+    @Override @NotNull
+    public Real getImaginary() {
+      return Integer.ZERO;
+    }
+
     @Override
     public int signum() {
       return this.numerator.value.signum();
