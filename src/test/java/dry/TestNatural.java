@@ -10,7 +10,7 @@ class TestNatural {
 
   @Test
   void testConstructWithNull() {
-    assertThatNullPointerException().isThrownBy(() -> { new Natural(null); });
+    assertThatNullPointerException().isThrownBy(() -> { Natural.valueOf(null); });
   }
 
   @Test

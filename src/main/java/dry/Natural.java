@@ -10,6 +10,16 @@ import org.jetbrains.annotations.NotNull;
  * Natural number (arbitrary size).
  */
 public strictfp class Natural extends Integer {
+  @NotNull
+  public static Natural valueOf(final long value) {
+    return new Natural(value);
+  }
+
+  @NotNull
+  public static Natural valueOf(@NotNull final BigInteger value) {
+    return new Natural(value);
+  }
+
   private static final long serialVersionUID = 1L;
 
   public static final long MIN_VALUE = 0L;
@@ -24,11 +34,11 @@ public strictfp class Natural extends Integer {
 
   public static final Natural TEN = new Natural(10L);
 
-  public Natural(final long value) {
+  protected Natural(final long value) {
     super(value, MIN_VALUE);
   }
 
-  public Natural(@NotNull final BigInteger value) {
+  protected Natural(@NotNull final BigInteger value) {
     super(value, MIN.value, null);
   }
 }
