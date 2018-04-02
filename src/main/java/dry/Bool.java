@@ -35,6 +35,10 @@ public class Bool extends java.lang.Object {
     this.value = value;
   }
 
+  public int size() {
+    return SIZE;
+  }
+
   public boolean getValue() {
     return this.value;
   }

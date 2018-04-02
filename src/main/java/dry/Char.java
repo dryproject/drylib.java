@@ -54,6 +54,10 @@ public class Char extends java.lang.Object {
     this.value = Objects.requireNonNull(value).charValue();
   }
 
+  public int size() {
+    return SIZE;
+  }
+
   public int getValue() {
     return this.value;
   }

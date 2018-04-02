@@ -129,7 +129,7 @@ public strictfp interface Integer extends Rational {
     }
   }
 
-  strictfp class Fixnum extends Bignum implements Integer {
+  strictfp abstract class Fixnum extends Bignum implements Integer {
     private static final long serialVersionUID = 1L;
 
     protected Fixnum(final long value) {
