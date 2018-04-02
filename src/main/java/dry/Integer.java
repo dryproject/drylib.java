@@ -51,7 +51,7 @@ public strictfp class Integer extends ExactNumber implements Rational {
   protected Integer(@NotNull final BigInteger value,
                     @Nullable final BigInteger min_value,
                     @Nullable final BigInteger max_value) {
-    if (value == null) throw new NullPointerException();
+    Objects.requireNonNull(value);
     if (min_value != null && value.compareTo(min_value) < 0) throw new ArithmeticException();
     if (max_value != null && value.compareTo(max_value) > 0) throw new ArithmeticException();
     this.value = value;
