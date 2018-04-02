@@ -10,6 +10,16 @@ import org.jetbrains.annotations.NotNull;
  * Integer number (16-bit).
  */
 public final strictfp class Int16 extends Int {
+  @NotNull
+  public static Int16 valueOf(final long value) {
+    return new Int16(value);
+  }
+
+  @NotNull
+  public static Int16 valueOf(@NotNull final BigInteger value) {
+    return new Int16(value);
+  }
+
   private static final long serialVersionUID = 1L;
 
   public static final int SIZE = 2; // bytes
@@ -22,11 +32,11 @@ public final strictfp class Int16 extends Int {
 
   public static final Int16 MAX = new Int16(MAX_VALUE);
 
-  public Int16(final long value) {
+  protected Int16(final long value) {
     super(value, MIN_VALUE, MAX_VALUE);
   }
 
-  public Int16(@NotNull final BigInteger value) {
+  protected Int16(@NotNull final BigInteger value) {
     super(value, MIN.value, MAX.value);
   }
 }

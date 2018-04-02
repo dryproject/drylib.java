@@ -10,12 +10,12 @@ class TestInt16 {
 
   @Test
   void testConstructWithNull() {
-    assertThatNullPointerException().isThrownBy(() -> { new Int16(null); });
+    assertThatNullPointerException().isThrownBy(() -> { Int16.valueOf(null); });
   }
 
   @Test
   void testMethod_toString() {
-    assertThat(new Int16(-1).toString()).isEqualTo("-1");
-    assertThat(new Int16(0).toString()).isEqualTo("0");
+    assertThat(Int16.valueOf(-1).toString()).isEqualTo("-1");
+    assertThat(Int16.valueOf(0).toString()).isEqualTo("0");
   }
 }

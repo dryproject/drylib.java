@@ -10,6 +10,16 @@ import org.jetbrains.annotations.NotNull;
  * Integer number (native size).
  */
 public strictfp class Int extends Integer {
+  @NotNull
+  public static Int valueOf(final long value) {
+    return new Int(BigInteger.valueOf(value));
+  }
+
+  @NotNull
+  public static Int valueOf(@NotNull final BigInteger value) {
+    return new Int(value);
+  }
+
   private static final long serialVersionUID = 1L;
 
   public static final int SIZE = Int64.SIZE;
@@ -34,11 +44,11 @@ public strictfp class Int extends Integer {
     super(value, min_value, max_value);
   }
 
-  public Int(final long value) {
+  protected Int(final long value) {
     super(value);
   }
 
-  public Int(@NotNull final BigInteger value) {
+  protected Int(@NotNull final BigInteger value) {
     super(value);
   }
 }

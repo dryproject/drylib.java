@@ -10,12 +10,12 @@ class TestInt64 {
 
   @Test
   void testConstructWithNull() {
-    assertThatNullPointerException().isThrownBy(() -> { new Int64(null); });
+    assertThatNullPointerException().isThrownBy(() -> { Int64.valueOf(null); });
   }
 
   @Test
   void testMethod_toString() {
-    assertThat(new Int64(-1).toString()).isEqualTo("-1");
-    assertThat(new Int64(0).toString()).isEqualTo("0");
+    assertThat(Int64.valueOf(-1).toString()).isEqualTo("-1");
+    assertThat(Int64.valueOf(0).toString()).isEqualTo("0");
   }
 }

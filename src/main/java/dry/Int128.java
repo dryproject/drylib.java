@@ -10,6 +10,16 @@ import org.jetbrains.annotations.NotNull;
  * Integer number (128-bit).
  */
 public final strictfp class Int128 extends Int {
+  @NotNull
+  public static Int128 valueOf(final long value) {
+    return new Int128(value);
+  }
+
+  @NotNull
+  public static Int128 valueOf(@NotNull final BigInteger value) {
+    return new Int128(value);
+  }
+
   private static final long serialVersionUID = 1L;
 
   public static final int SIZE = 16; // bytes
@@ -22,11 +32,11 @@ public final strictfp class Int128 extends Int {
 
   public static final Int128 MAX = new Int128(java.lang.Long.MAX_VALUE);
 
-  public Int128(final long value) {
+  protected Int128(final long value) {
     super(BigInteger.valueOf(value), MIN_VALUE, MAX_VALUE);
   }
 
-  public Int128(@NotNull final BigInteger value) {
+  protected Int128(@NotNull final BigInteger value) {
     super(value, MIN.value, MAX.value);
   }
 }

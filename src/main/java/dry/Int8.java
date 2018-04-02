@@ -10,6 +10,16 @@ import org.jetbrains.annotations.NotNull;
  * Integer number (8-bit).
  */
 public final strictfp class Int8 extends Int {
+  @NotNull
+  public static Int8 valueOf(final long value) {
+    return new Int8(value);
+  }
+
+  @NotNull
+  public static Int8 valueOf(@NotNull final BigInteger value) {
+    return new Int8(value);
+  }
+
   private static final long serialVersionUID = 1L;
 
   public static final int SIZE = 1; // bytes
@@ -22,11 +32,11 @@ public final strictfp class Int8 extends Int {
 
   public static final Int8 MAX = new Int8(MAX_VALUE);
 
-  public Int8(final long value) {
+  protected Int8(final long value) {
     super(value, MIN_VALUE, MAX_VALUE);
   }
 
-  public Int8(@NotNull final BigInteger value) {
+  protected Int8(@NotNull final BigInteger value) {
     super(value, MIN.value, MAX.value);
   }
 }
