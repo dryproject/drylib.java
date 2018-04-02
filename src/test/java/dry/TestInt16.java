@@ -14,6 +14,11 @@ class TestInt16 {
   }
 
   @Test
+  void testMethod_size() {
+    assertThat(Int16.MAX.size()).isEqualTo(2);
+  }
+
+  @Test
   void testMethod_toString() {
     assertThat(Int16.valueOf(-1).toString()).isEqualTo("-1");
     assertThat(Int16.valueOf(0).toString()).isEqualTo("0");

@@ -39,4 +39,9 @@ public final strictfp class Int128 extends Integer.Bignum implements Int {
   protected Int128(@NotNull final BigInteger value) {
     super(value, MIN.value, MAX.value);
   }
+
+  @Override
+  public int size() {
+    return SIZE;
+  }
 }

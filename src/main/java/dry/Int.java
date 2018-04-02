@@ -29,4 +29,6 @@ public strictfp interface Int extends Integer {
   public static final Int MIN = Int64.MIN;
 
   public static final Int MAX = Int64.MAX;
+
+  public int size();
 }

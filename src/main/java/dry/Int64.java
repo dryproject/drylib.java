@@ -39,4 +39,9 @@ public final strictfp class Int64 extends Integer.Fixnum implements Int {
   protected Int64(@NotNull final BigInteger value) {
     super(value, MIN.value, MAX.value);
   }
+
+  @Override
+  public int size() {
+    return SIZE;
+  }
 }

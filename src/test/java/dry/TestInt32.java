@@ -14,6 +14,11 @@ class TestInt32 {
   }
 
   @Test
+  void testMethod_size() {
+    assertThat(Int32.MAX.size()).isEqualTo(4);
+  }
+
+  @Test
   void testMethod_toString() {
     assertThat(Int32.valueOf(-1).toString()).isEqualTo("-1");
     assertThat(Int32.valueOf(0).toString()).isEqualTo("0");

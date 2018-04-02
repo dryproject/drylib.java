@@ -14,6 +14,11 @@ class TestInt64 {
   }
 
   @Test
+  void testMethod_size() {
+    assertThat(Int64.MAX.size()).isEqualTo(8);
+  }
+
+  @Test
   void testMethod_toString() {
     assertThat(Int64.valueOf(-1).toString()).isEqualTo("-1");
     assertThat(Int64.valueOf(0).toString()).isEqualTo("0");

@@ -14,6 +14,11 @@ class TestInt8 {
   }
 
   @Test
+  void testMethod_size() {
+    assertThat(Int8.MAX.size()).isEqualTo(1);
+  }
+
+  @Test
   void testMethod_toString() {
     assertThat(Int8.valueOf(-1).toString()).isEqualTo("-1");
     assertThat(Int8.valueOf(0).toString()).isEqualTo("0");

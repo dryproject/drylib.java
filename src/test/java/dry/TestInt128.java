@@ -14,6 +14,11 @@ class TestInt128 {
   }
 
   @Test
+  void testMethod_size() {
+    assertThat(Int128.MAX.size()).isEqualTo(16);
+  }
+
+  @Test
   void testMethod_toString() {
     assertThat(Int128.valueOf(-1).toString()).isEqualTo("-1");
     assertThat(Int128.valueOf(0).toString()).isEqualTo("0");
