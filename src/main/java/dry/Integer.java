@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Integer number (arbitrary size).
  */
-public strictfp class Integer extends AbstractNumber implements Number {
+public strictfp class Integer extends AbstractNumber implements Rational {
   private static final long serialVersionUID = 1L;
 
   public static final Integer ZERO = Natural.ZERO;
@@ -59,6 +59,21 @@ public strictfp class Integer extends AbstractNumber implements Number {
   @NotNull
   public BigInteger getValue() {
     return this.value;
+  }
+
+  @Override @NotNull
+  public Integer getNumerator() {
+    return this;
+  }
+
+  @Override @NotNull
+  public Integer getDenominator() {
+    return Integer.ONE;
+  }
+
+  @Override
+  public int signum() {
+    return this.value.signum();
   }
 
   @Override
