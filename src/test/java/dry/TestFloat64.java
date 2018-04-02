@@ -15,6 +15,11 @@ class TestFloat64 {
   }
 
   @Test
+  void testMethod_size() {
+    assertThat(Float64.MAX.size()).isEqualTo(8);
+  }
+
+  @Test
   void testMethod_toString() {
     assertThat(Float64.valueOf(1.23d).toString()).isEqualTo("1.23");
   }

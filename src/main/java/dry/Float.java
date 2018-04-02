@@ -41,4 +41,6 @@ public strictfp interface Float extends Real {
   public static final Float MAX = Float64.MAX;
 
   public double getValue();
+
+  public int size();
 }

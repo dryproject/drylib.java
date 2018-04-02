@@ -15,6 +15,11 @@ class TestFloat32 {
   }
 
   @Test
+  void testMethod_size() {
+    assertThat(Float32.MAX.size()).isEqualTo(4);
+  }
+
+  @Test
   void testMethod_toString() {
     assertThat(Float32.valueOf(1.23).toString()).isEqualTo("1.23");
   }

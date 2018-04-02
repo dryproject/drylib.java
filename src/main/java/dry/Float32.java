@@ -45,4 +45,9 @@ public final strictfp class Float32 extends AbstractFloat implements Float {
   protected Float32(final double value) {
     super(value, MIN_VALUE, MAX_VALUE);
   }
+
+  @Override
+  public int size() {
+    return SIZE;
+  }
 }
