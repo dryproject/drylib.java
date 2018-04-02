@@ -11,8 +11,8 @@ class TestRational {
   @Test
   void testConstructWithNull() {
     assertThatNullPointerException().isThrownBy(() -> { Rational.valueOf(null, null); });
-    assertThatNullPointerException().isThrownBy(() -> { Rational.valueOf(new Integer(1), null); });
-    assertThatNullPointerException().isThrownBy(() -> { Rational.valueOf(null, new Integer(1)); });
+    assertThatNullPointerException().isThrownBy(() -> { Rational.valueOf(Integer.ONE, null); });
+    assertThatNullPointerException().isThrownBy(() -> { Rational.valueOf(null, Integer.ONE); });
   }
 
   @Test

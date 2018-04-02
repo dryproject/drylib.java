@@ -12,6 +12,16 @@ import org.jetbrains.annotations.Nullable;
  * Integer number (arbitrary size).
  */
 public strictfp class Integer extends AbstractNumber implements Rational {
+  @NotNull
+  public static Integer valueOf(final long value) {
+    return new Integer(BigInteger.valueOf(value));
+  }
+
+  @NotNull
+  public static Integer valueOf(@NotNull final BigInteger value) {
+    return new Integer(value);
+  }
+
   private static final long serialVersionUID = 1L;
 
   public static final Integer ZERO = Natural.ZERO;
@@ -47,13 +57,12 @@ public strictfp class Integer extends AbstractNumber implements Rational {
     this.value = value;
   }
 
-  public Integer(final long value) {
+  protected Integer(final long value) {
     this.value = BigInteger.valueOf(value);
   }
 
-  public Integer(@NotNull final BigInteger value) {
-    if (value == null) throw new NullPointerException();
-    this.value = value;
+  protected Integer(@NotNull final BigInteger value) {
+    this.value = Objects.requireNonNull(value);
   }
 
   @NotNull

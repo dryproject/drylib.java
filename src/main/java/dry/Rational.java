@@ -14,7 +14,7 @@ public strictfp interface Rational extends Real {
   @NotNull
   public static Rational valueOf(final long numerator,
                                  final long denominator) {
-    return new BigRational(new Integer(numerator), new Integer(denominator));
+    return new BigRational(Integer.valueOf(numerator), Integer.valueOf(denominator));
   }
 
   @NotNull
