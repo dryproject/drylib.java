@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Base class for floating-point numbers.
  */
-public strictfp class AbstractFloat extends InexactNumber implements Float {
+public abstract strictfp class AbstractFloat extends InexactNumber implements Float {
   private static final long serialVersionUID = 1L;
 
   public final double value;

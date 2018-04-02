@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Natural number (arbitrary size).
  */
-public strictfp class Natural extends Integer {
+public strictfp class Natural extends Integer.Bignum implements Integer {
   @NotNull
   public static Natural valueOf(final long value) {
     return new Natural(value);

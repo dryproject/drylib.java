@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Integer number (16-bit).
  */
-public final strictfp class Int16 extends Int {
+public final strictfp class Int16 extends Integer.Fixnum implements Int {
   @NotNull
   public static Int16 valueOf(final long value) {
     return new Int16(value);

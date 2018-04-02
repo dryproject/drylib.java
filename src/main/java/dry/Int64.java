@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Integer number (64-bit).
  */
-public final strictfp class Int64 extends Int {
+public final strictfp class Int64 extends Integer.Fixnum implements Int {
   @NotNull
   public static Int64 valueOf(final long value) {
     return new Int64(value);
@@ -33,7 +33,7 @@ public final strictfp class Int64 extends Int {
   public static final Int64 MAX = new Int64(MAX_VALUE);
 
   protected Int64(final long value) {
-    super(value, MIN_VALUE, MAX_VALUE);
+    super(value);
   }
 
   protected Int64(@NotNull final BigInteger value) {

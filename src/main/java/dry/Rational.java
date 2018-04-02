@@ -63,7 +63,7 @@ public strictfp interface Rational extends Real {
 
     @Override
     public int signum() {
-      return this.numerator.value.signum();
+      return this.numerator.getValue().signum();
     }
 
     @Override

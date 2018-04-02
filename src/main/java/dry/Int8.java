@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Integer number (8-bit).
  */
-public final strictfp class Int8 extends Int {
+public final strictfp class Int8 extends Integer.Fixnum implements Int {
   @NotNull
   public static Int8 valueOf(final long value) {
     return new Int8(value);

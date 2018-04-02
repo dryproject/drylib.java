@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Integer number (128-bit).
  */
-public final strictfp class Int128 extends Int {
+public final strictfp class Int128 extends Integer.Bignum implements Int {
   @NotNull
   public static Int128 valueOf(final long value) {
     return new Int128(value);

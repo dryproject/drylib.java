@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Integer number (32-bit).
  */
-public final strictfp class Int32 extends Int {
+public final strictfp class Int32 extends Integer.Fixnum implements Int {
   @NotNull
   public static Int32 valueOf(final long value) {
     return new Int32(value);
