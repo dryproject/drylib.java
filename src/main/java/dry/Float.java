@@ -11,7 +11,25 @@ import org.jetbrains.annotations.Nullable;
  * Floating-point number (native size).
  */
 public strictfp class Float extends InexactNumber implements Real {
-  private static final long serialVersionUID = 1L;
+  @NotNull
+  public static Float valueOf(final double value) {
+    return Float64.valueOf(value);
+  }
+
+  @NotNull
+  public static Float valueOf(final float value) {
+    return Float64.valueOf(value);
+  }
+
+  @NotNull
+  public static Float valueOf(@NotNull final java.lang.Double value) {
+    return Float64.valueOf(value);
+  }
+
+  @NotNull
+  public static Float valueOf(@NotNull final java.lang.Float value) {
+    return Float64.valueOf(value);
+  }
 
   public static final int SIZE = Float64.SIZE;
 
@@ -23,7 +41,13 @@ public strictfp class Float extends InexactNumber implements Real {
 
   public static final Float MAX = Float64.MAX;
 
+  private static final long serialVersionUID = 1L;
+
   public final double value;
+
+  protected Float(final double value) {
+    this.value = value;
+  }
 
   protected Float(final double value,
                   final double min_value,
@@ -31,24 +55,6 @@ public strictfp class Float extends InexactNumber implements Real {
     if (value < min_value) throw new ArithmeticException();
     if (value > max_value) throw new ArithmeticException();
     this.value = value;
-  }
-
-  public Float(final double value) {
-    this.value = value;
-  }
-
-  public Float(final float value) {
-    this.value = (double)value;
-  }
-
-  public Float(@NotNull final java.lang.Double value) {
-    if (value == null) throw new NullPointerException();
-    this.value = value.doubleValue();
-  }
-
-  public Float(@NotNull final java.lang.Float value) {
-    if (value == null) throw new NullPointerException();
-    this.value = (double)value.floatValue();
   }
 
   public double getValue() {

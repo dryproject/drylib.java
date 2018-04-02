@@ -10,12 +10,12 @@ class TestFloat64 {
 
   @Test
   void testConstructWithNull() {
-    assertThatNullPointerException().isThrownBy(() -> { new Float64((java.lang.Double)null); });
-    assertThatNullPointerException().isThrownBy(() -> { new Float64((java.lang.Float)null); });
+    assertThatNullPointerException().isThrownBy(() -> { Float64.valueOf((java.lang.Double)null); });
+    assertThatNullPointerException().isThrownBy(() -> { Float64.valueOf((java.lang.Float)null); });
   }
 
   @Test
   void testMethod_toString() {
-    assertThat(new Float64(1.23d).toString()).isEqualTo("1.23");
+    assertThat(Float64.valueOf(1.23d).toString()).isEqualTo("1.23");
   }
 }

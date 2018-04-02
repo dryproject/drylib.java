@@ -2,12 +2,34 @@
 
 package dry;
 
+import java.util.Objects;
+
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Floating-point number (32-bit single-precision)
  */
 public final strictfp class Float32 extends Float {
+  @NotNull
+  public static Float32 valueOf(final double value) {
+    return new Float32(value);
+  }
+
+  @NotNull
+  public static Float32 valueOf(final float value) {
+    return new Float32((double)value);
+  }
+
+  @NotNull
+  public static Float32 valueOf(@NotNull final java.lang.Double value) {
+    return new Float32(Objects.requireNonNull(value).doubleValue());
+  }
+
+  @NotNull
+  public static Float32 valueOf(@NotNull final java.lang.Float value) {
+    return new Float32(Objects.requireNonNull(value).doubleValue());
+  }
+
   private static final long serialVersionUID = 1L;
 
   public static final int SIZE = 4; // bytes
@@ -20,19 +42,7 @@ public final strictfp class Float32 extends Float {
 
   public static final Float32 MAX = new Float32(MAX_VALUE);
 
-  public Float32(final double value) {
+  protected Float32(final double value) {
     super(value, MIN_VALUE, MAX_VALUE);
-  }
-
-  public Float32(final float value) {
-    super(value);
-  }
-
-  public Float32(@NotNull final java.lang.Double value) {
-    super(value.doubleValue(), MIN_VALUE, MAX_VALUE); // // throws NullPointerException if needed
-  }
-
-  public Float32(@NotNull final java.lang.Float value) {
-    super(value);
   }
 }
