@@ -10,58 +10,70 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Rational number (arbitrary size).
  */
-public final strictfp class Rational extends AbstractNumber implements Real {
-  private static final long serialVersionUID = 1L;
-
-  public final Integer numerator;
-  public final Integer denominator;
-
-  public Rational(final long numerator,
-                  final long denominator) {
-    this.numerator = new Integer(numerator);
-    this.denominator = new Integer(denominator);
-  }
-
-  public Rational(@NotNull final Integer numerator,
-                  @NotNull final Integer denominator) {
-    if (numerator == null) throw new NullPointerException();
-    if (denominator == null) throw new NullPointerException();
-    this.numerator = numerator;
-    this.denominator = denominator;
+public strictfp interface Rational extends Real {
+  @NotNull
+  public static Rational valueOf(final long numerator,
+                                 final long denominator) {
+    return new BigRational(new Integer(numerator), new Integer(denominator));
   }
 
   @NotNull
-  public Integer getNumerator() {
-    return this.numerator;
+  public static Rational valueOf(@NotNull final Integer numerator,
+                                 @NotNull final Integer denominator) {
+    return new BigRational(numerator, denominator);
   }
 
   @NotNull
-  public Integer getDenominator() {
-    return this.denominator;
-  }
+  public Integer getNumerator();
 
-  @Override
-  public int signum() {
-    return this.numerator.value.signum();
-  }
+  @NotNull
+  public Integer getDenominator();
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(this.numerator, this.denominator);
-  }
+  final strictfp class BigRational extends AbstractNumber implements Rational {
+    private static final long serialVersionUID = 1L;
 
-  @Override
-  public boolean equals(@Nullable final Object object) {
-    if (this == object) return true;
-    if (object == null) return false;
-    if (!(object instanceof Rational)) return false;
-    final Rational that = (Rational)object;
-    return Objects.equals(this.numerator, that.numerator) &&
-      Objects.equals(this.denominator, that.denominator);
-  }
+    public final Integer numerator;
+    public final Integer denominator;
 
-  @Override @NotNull
-  public String toString() {
-    return java.lang.String.format("%s/%s", this.numerator, this.denominator);
+    protected BigRational(@NotNull final Integer numerator,
+                          @NotNull final Integer denominator) {
+      this.numerator = Objects.requireNonNull(numerator);
+      this.denominator = Objects.requireNonNull(denominator);
+    }
+
+    @Override @NotNull
+    public Integer getNumerator() {
+      return this.numerator;
+    }
+
+    @Override @NotNull
+    public Integer getDenominator() {
+      return this.denominator;
+    }
+
+    @Override
+    public int signum() {
+      return this.numerator.value.signum();
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(this.numerator, this.denominator);
+    }
+
+    @Override
+    public boolean equals(@Nullable final Object object) {
+      if (this == object) return true;
+      if (object == null) return false;
+      if (!(object instanceof BigRational)) return false;
+      final BigRational that = (BigRational)object;
+      return Objects.equals(this.numerator, that.numerator) &&
+        Objects.equals(this.denominator, that.denominator);
+    }
+
+    @Override @NotNull
+    public String toString() {
+      return java.lang.String.format("%s/%s", this.numerator, this.denominator);
+    }
   }
 }

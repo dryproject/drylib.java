@@ -10,13 +10,13 @@ class TestRational {
 
   @Test
   void testConstructWithNull() {
-    assertThatNullPointerException().isThrownBy(() -> { new Rational(null, null); });
-    assertThatNullPointerException().isThrownBy(() -> { new Rational(new Integer(1), null); });
-    assertThatNullPointerException().isThrownBy(() -> { new Rational(null, new Integer(1)); });
+    assertThatNullPointerException().isThrownBy(() -> { Rational.valueOf(null, null); });
+    assertThatNullPointerException().isThrownBy(() -> { Rational.valueOf(new Integer(1), null); });
+    assertThatNullPointerException().isThrownBy(() -> { Rational.valueOf(null, new Integer(1)); });
   }
 
   @Test
   void testMethod_toString() {
-    assertThat(new Rational(1, 2).toString()).isEqualTo("1/2");
+    assertThat(Rational.valueOf(1, 2).toString()).isEqualTo("1/2");
   }
 }
