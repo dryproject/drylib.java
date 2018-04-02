@@ -11,6 +11,21 @@ import org.jetbrains.annotations.Nullable;
  * Character (Unicode code point).
  */
 public class Char extends java.lang.Object {
+  @NotNull
+  public static Char valueOf(final int value) {
+    return new Char(value);
+  }
+
+  @NotNull
+  public static Char valueOf(final char value) {
+    return new Char(value);
+  }
+
+  @NotNull
+  public static Char valueOf(@NotNull final java.lang.Character value) {
+    return new Char(value);
+  }
+
   private static final long serialVersionUID = 1L;
 
   public static final int SIZE = 4; // bytes
@@ -25,19 +40,18 @@ public class Char extends java.lang.Object {
 
   public final int value;
 
-  public Char(final int value) {
+  protected Char(final int value) {
     if (value < MIN_VALUE) throw new ArithmeticException();
     if (value > MAX_VALUE) throw new ArithmeticException();
     this.value = value;
   }
 
-  public Char(final char value) {
+  protected Char(final char value) {
     this.value = value;
   }
 
-  public Char(@NotNull final java.lang.Character value) {
-    if (value == null) throw new NullPointerException();
-    this.value = value.charValue();
+  protected Char(@NotNull final java.lang.Character value) {
+    this.value = Objects.requireNonNull(value).charValue();
   }
 
   public int getValue() {
