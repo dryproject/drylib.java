@@ -14,6 +14,14 @@ class TestWord64 {
   }
 
   @Test
+  void testInterface_Comparable() {
+    assertThat(Word64.MIN).isEqualByComparingTo(Word64.MIN);
+    assertThat(Word64.MAX).isEqualByComparingTo(Word64.MAX);
+    //assertThat(Word64.MIN).isLessThan(Word64.MAX); // FIXME
+    //assertThat(Word64.MAX).isGreaterThan(Word64.MIN); // FIXME
+  }
+
+  @Test
   void testMethod_toString() {
     assertThat(Word64.MIN.toString()).isEqualTo("0x0000000000000000");
     assertThat(Word64.MAX.toString()).isEqualTo("0xffffffffffffffff");

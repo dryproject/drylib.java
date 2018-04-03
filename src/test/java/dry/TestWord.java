@@ -14,6 +14,14 @@ class TestWord {
   }
 
   @Test
+  void testInterface_Comparable() {
+    assertThat(Word.MIN).isEqualByComparingTo(Word.MIN);
+    assertThat(Word.MAX).isEqualByComparingTo(Word.MAX);
+    //assertThat(Word.MIN).isLessThan(Word.MAX); // FIXME
+    //assertThat(Word.MAX).isGreaterThan(Word.MIN); // FIXME
+  }
+
+  @Test
   void testMethod_toString() {
     assertThat(Word.MIN.toString()).isEqualTo("0x0000000000000000");
     assertThat(Word.MAX.toString()).isEqualTo("0xffffffffffffffff");
