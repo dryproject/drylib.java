@@ -2,6 +2,8 @@
 
 package dry;
 
+import java.util.Objects;
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -44,5 +46,10 @@ public abstract class AbstractWord extends ExactNumber implements Word {
     if (!(object instanceof AbstractWord)) return false;
     final AbstractWord that = (AbstractWord)object;
     return this.value == that.value;
+  }
+
+  @Override
+  public int compareTo(@NotNull final Word that) {
+    return java.lang.Long.compare(this.value, Objects.requireNonNull(that).getValue());
   }
 }

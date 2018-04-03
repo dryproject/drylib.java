@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Machine word (native size).
  */
-public interface Word extends Number {
+public interface Word extends Number, Comparable<Word> {
   @NotNull
   public static Word valueOf(final long value) {
     return Word64.valueOf(value);
