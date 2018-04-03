@@ -14,6 +14,14 @@ class TestBool {
   }
 
   @Test
+  void testInterface_Comparable() {
+    assertThat(Bool.FALSE).isEqualByComparingTo(Bool.FALSE);
+    assertThat(Bool.TRUE).isEqualByComparingTo(Bool.TRUE);
+    assertThat(Bool.FALSE).isLessThan(Bool.TRUE);
+    assertThat(Bool.TRUE).isGreaterThan(Bool.FALSE);
+  }
+
+  @Test
   void testMethod_getValue() {
     assertThat(Bool.TRUE.getValue()).isEqualTo(true);
     assertThat(Bool.FALSE.getValue()).isEqualTo(false);

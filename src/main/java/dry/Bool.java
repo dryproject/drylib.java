@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Boolean (true or false).
  */
-public class Bool extends java.lang.Object {
+public class Bool extends java.lang.Object implements Comparable<Bool> {
   @NotNull
   public static Bool valueOf(final boolean value) {
     return value ? TRUE : FALSE;
@@ -55,6 +55,11 @@ public class Bool extends java.lang.Object {
     if (!(object instanceof Bool)) return false;
     final Bool that = (Bool)object;
     return this.value == that.value;
+  }
+
+  @Override
+  public int compareTo(@NotNull final Bool that) {
+    return java.lang.Boolean.compare(this.value, Objects.requireNonNull(that).value);
   }
 
   @Override @NotNull
