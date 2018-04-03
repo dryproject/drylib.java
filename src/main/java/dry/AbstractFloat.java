@@ -93,6 +93,11 @@ public abstract strictfp class AbstractFloat extends InexactNumber implements Fl
     return java.lang.Double.compare(this.value, that.value) == 0;
   }
 
+  @Override
+  public int compareTo(@NotNull final Float that) {
+    return java.lang.Double.compare(this.value, Objects.requireNonNull(that).getValue());
+  }
+
   @Override @NotNull
   public String toString() {
     return java.lang.Double.toString(this.value);

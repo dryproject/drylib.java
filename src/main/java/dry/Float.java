@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Floating-point number (native size).
  */
-public strictfp interface Float extends Real {
+public strictfp interface Float extends Real, Comparable<Float> {
   @NotNull
   public static Float valueOf(final double value) {
     return Float64.valueOf(value);
