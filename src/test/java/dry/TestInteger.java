@@ -14,6 +14,14 @@ class TestInteger {
   }
 
   @Test
+  void testInterface_Comparable() {
+    assertThat(Integer.ZERO).isEqualByComparingTo(Integer.ZERO);
+    assertThat(Integer.ONE).isEqualByComparingTo(Integer.ONE);
+    assertThat(Integer.ZERO).isLessThan(Integer.ONE);
+    assertThat(Integer.ONE).isGreaterThan(Integer.ZERO);
+  }
+
+  @Test
   void testMethod_toString() {
     assertThat(Integer.valueOf(-1).toString()).isEqualTo("-1");
     assertThat(Integer.valueOf(0).toString()).isEqualTo("0");

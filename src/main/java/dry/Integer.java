@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Integer number (arbitrary size).
  */
-public strictfp interface Integer extends Rational {
+public strictfp interface Integer extends Rational, Comparable<Integer> {
   @NotNull
   public static Integer valueOf(final long value) {
     return new Bignum(value);
@@ -121,6 +121,15 @@ public strictfp interface Integer extends Rational {
       if (!(object instanceof Bignum)) return false;
       final Bignum that = (Bignum)object;
       return Objects.equals(this.value, that.value);
+    }
+
+    @Override
+    public int compareTo(@NotNull final Integer that) {
+      Objects.requireNonNull(that);
+      if (that instanceof Bignum) {
+        return this.value.compareTo(((Bignum)that).value);
+      }
+      return this.value.compareTo(that.getValue()); // TODO: optimize
     }
 
     @Override @NotNull
