@@ -15,6 +15,14 @@ class TestFloat64 {
   }
 
   @Test
+  void testInterface_Comparable() {
+    assertThat(Float64.MIN).isEqualByComparingTo(Float64.MIN);
+    assertThat(Float64.MAX).isEqualByComparingTo(Float64.MAX);
+    assertThat(Float64.MIN).isLessThan(Float64.MAX);
+    assertThat(Float64.MAX).isGreaterThan(Float64.MIN);
+  }
+
+  @Test
   void testMethod_size() {
     assertThat(Float64.MAX.size()).isEqualTo(8);
   }

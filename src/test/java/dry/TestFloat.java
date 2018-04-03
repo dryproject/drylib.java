@@ -15,6 +15,14 @@ class TestFloat {
   }
 
   @Test
+  void testInterface_Comparable() {
+    assertThat(Float.MIN).isEqualByComparingTo(Float.MIN);
+    assertThat(Float.MAX).isEqualByComparingTo(Float.MAX);
+    assertThat(Float.MIN).isLessThan(Float.MAX);
+    assertThat(Float.MAX).isGreaterThan(Float.MIN);
+  }
+
+  @Test
   void testMethod_size() {
     assertThat(Float.MAX.size()).isEqualTo(8);
   }
