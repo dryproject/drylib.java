@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Character (Unicode code point).
  */
-public class Char extends java.lang.Object {
+public class Char extends java.lang.Object implements Comparable<Char> {
   @NotNull
   public static Char valueOf(final int value) {
     return new Char(value);
@@ -74,6 +74,11 @@ public class Char extends java.lang.Object {
     if (!(object instanceof Char)) return false;
     final Char that = (Char)object;
     return this.value == that.value;
+  }
+
+  @Override
+  public int compareTo(@NotNull final Char that) {
+    return java.lang.Character.compare((char)this.value, (char)Objects.requireNonNull(that).value); // FIXME: non-BMP chars
   }
 
   @Override @NotNull

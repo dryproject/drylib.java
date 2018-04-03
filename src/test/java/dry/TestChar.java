@@ -14,6 +14,13 @@ class TestChar {
   }
 
   @Test
+  void testInterface_Comparable() {
+    assertThat(Char.valueOf('a')).isEqualByComparingTo(Char.valueOf('a'));
+    assertThat(Char.valueOf('a')).isLessThan(Char.valueOf('b'));
+    assertThat(Char.valueOf('b')).isGreaterThan(Char.valueOf('a'));
+  }
+
+  @Test
   void testMethod_toString() {
     assertThat(Char.valueOf(0x41).toString()).isEqualTo("A");
     assertThat(Char.valueOf(0x20000).toString()).isEqualTo("\uD840\uDC00");
