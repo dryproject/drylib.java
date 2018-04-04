@@ -54,6 +54,11 @@ public strictfp interface Real extends Complex {
     }
 
     @Override
+    public boolean isZero() {
+      return this == Real.ZERO || this.value.equals(BigDecimal.ZERO);
+    }
+
+    @Override
     public boolean is(final long value) {
       try {
         return this.value.longValueExact() == value;

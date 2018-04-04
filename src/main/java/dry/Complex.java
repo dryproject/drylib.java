@@ -60,6 +60,11 @@ public strictfp interface Complex extends Number {
     }
 
     @Override
+    public boolean isZero() {
+      return this == Complex.ZERO || (this.real.isZero() && this.imaginary.isZero());
+    }
+
+    @Override
     public int hashCode() {
       return Objects.hash(this.real, this.imaginary);
     }

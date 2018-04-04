@@ -73,6 +73,11 @@ public strictfp interface Integer extends Rational, Comparable<Integer> {
     }
 
     @Override
+    public boolean isZero() {
+      return this.value.equals(BigInteger.ZERO);
+    }
+
+    @Override
     public boolean is(final long value) {
       try {
         return this.value.longValueExact() == value;

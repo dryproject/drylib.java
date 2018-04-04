@@ -56,6 +56,11 @@ public strictfp interface Rational extends Real {
     }
 
     @Override
+    public boolean isZero() {
+      return this == Rational.ZERO || this.is(0L);
+    }
+
+    @Override
     public boolean is(final long value) {
       return this.denominator.is(1) && this.numerator.is(value);
     }

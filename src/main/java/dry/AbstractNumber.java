@@ -19,7 +19,8 @@ public abstract strictfp class AbstractNumber extends java.lang.Number implement
 
   @Override
   public long longValue() {
-    return 0; // TODO
+    assert false : "not implemented";
+    return 0;
   }
 
   @Override
@@ -39,7 +40,8 @@ public abstract strictfp class AbstractNumber extends java.lang.Number implement
 
   @Override
   public double doubleValue() {
-    return 0; // TODO
+    assert false : "not implemented";
+    return 0;
   }
 
   @Override

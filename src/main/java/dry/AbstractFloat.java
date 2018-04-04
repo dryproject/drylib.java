@@ -33,6 +33,11 @@ public abstract strictfp class AbstractFloat extends InexactNumber implements Fl
   }
 
   @Override
+  public boolean isZero() {
+    return this.value == 0.0d;
+  }
+
+  @Override
   public boolean is(final double value) {
     return this.value == value;
   }
