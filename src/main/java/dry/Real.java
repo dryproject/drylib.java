@@ -33,6 +33,8 @@ public strictfp interface Real extends Complex {
     return new BigReal(new BigDecimal(value));
   }
 
+  public static final Real ZERO = new BigReal(BigDecimal.ZERO);
+
   public boolean is(long value);
 
   public int signum();

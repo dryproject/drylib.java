@@ -29,6 +29,8 @@ public strictfp interface Complex extends Number {
     return new RealComplex(real, imaginary);
   }
 
+  public static final Complex ZERO = new RealComplex(Real.ZERO, Real.ZERO);
+
   @NotNull
   public Real getReal();
 
