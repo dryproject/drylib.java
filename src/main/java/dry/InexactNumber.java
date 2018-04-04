@@ -2,9 +2,6 @@
 
 package dry;
 
-/**
- * @private
- */
 public abstract strictfp class InexactNumber extends AbstractNumber {
   private static final long serialVersionUID = 1L;
 

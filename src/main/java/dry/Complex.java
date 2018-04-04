@@ -35,9 +35,6 @@ public strictfp interface Complex extends Number {
   @NotNull
   public Real getImaginary();
 
-  /**
-    * @private
-    */
   final strictfp class RealComplex extends ExactNumber implements Complex {
     private static final long serialVersionUID = 1L;
 

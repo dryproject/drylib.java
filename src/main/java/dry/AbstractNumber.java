@@ -2,9 +2,6 @@
 
 package dry;
 
-/**
- * @private
- */
 public abstract strictfp class AbstractNumber extends java.lang.Number implements Number, java.io.Serializable {
   private static final long serialVersionUID = 1L;
 

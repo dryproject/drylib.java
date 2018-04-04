@@ -35,9 +35,6 @@ public strictfp interface Real extends Complex {
 
   public int signum();
 
-  /**
-   * @private
-   */
   final strictfp class BigReal extends ExactNumber implements Real {
     private static final long serialVersionUID = 1L;
 
