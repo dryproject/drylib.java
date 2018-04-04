@@ -33,6 +33,9 @@ public strictfp interface Integer extends Rational, Comparable<Integer> {
   @NotNull
   public BigInteger getValue();
 
+  @Override
+  public boolean is(long value);
+
   strictfp class Bignum extends AbstractInteger implements Integer {
     private static final long serialVersionUID = 1L;
 
@@ -67,6 +70,16 @@ public strictfp interface Integer extends Rational, Comparable<Integer> {
       if (min_value != null && value.compareTo(min_value) < 0) throw new ArithmeticException();
       if (max_value != null && value.compareTo(max_value) > 0) throw new ArithmeticException();
       this.value = value;
+    }
+
+    @Override
+    public boolean is(final long value) {
+      try {
+        return this.value.longValueExact() == value;
+      }
+      catch (final ArithmeticException error) {
+        return false;
+      }
     }
 
     @Override @NotNull

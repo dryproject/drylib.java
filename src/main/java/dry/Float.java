@@ -43,4 +43,8 @@ public strictfp interface Float extends Real, Comparable<Float> {
   public int size();
 
   public double getValue();
+
+  public boolean is(double value);
+
+  public boolean is(float value);
 }

@@ -33,6 +33,8 @@ public strictfp interface Real extends Complex {
     return new BigReal(new BigDecimal(value));
   }
 
+  public boolean is(long value);
+
   public int signum();
 
   final strictfp class BigReal extends ExactNumber implements Real {
@@ -47,6 +49,16 @@ public strictfp interface Real extends Complex {
     @NotNull
     public BigDecimal getValue() {
       return this.value;
+    }
+
+    @Override
+    public boolean is(final long value) {
+      try {
+        return this.value.longValueExact() == value;
+      }
+      catch (final ArithmeticException error) {
+        return false;
+      }
     }
 
     @NotNull

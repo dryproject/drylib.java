@@ -25,6 +25,11 @@ public abstract class AbstractWord extends ExactNumber implements Word {
   }
 
   @Override
+  public boolean is(final long value) {
+    return this.value == value;
+  }
+
+  @Override
   public long longValue() {
     return this.value;
   }

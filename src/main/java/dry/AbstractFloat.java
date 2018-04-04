@@ -32,6 +32,21 @@ public abstract strictfp class AbstractFloat extends InexactNumber implements Fl
     return this.value;
   }
 
+  @Override
+  public boolean is(final double value) {
+    return this.value == value;
+  }
+
+  @Override
+  public boolean is(final float value) {
+    return this.value == (double)value;
+  }
+
+  @Override
+  public boolean is(final long value) {
+    return this.value == (double)value;
+  }
+
   @Override @NotNull
   public Real getReal() {
     return this;

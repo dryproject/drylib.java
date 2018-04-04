@@ -43,6 +43,10 @@ public class Bool extends java.lang.Object implements Scalar<Bool>, Comparable<B
     return this.value;
   }
 
+  public boolean is(final boolean value) {
+    return this.value == value;
+  }
+
   @Override
   public int hashCode() {
     return Objects.hashCode(this.value);
