@@ -25,6 +25,8 @@ public final class Word16 extends AbstractWord implements Word {
 
   public static final Word16 MAX = new Word16(MAX_VALUE);
 
+  public static final Word16 ZERO = MIN;
+
   protected Word16(final long value) {
     super(value);
   }

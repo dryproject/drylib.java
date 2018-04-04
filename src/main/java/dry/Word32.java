@@ -25,6 +25,8 @@ public final class Word32 extends AbstractWord implements Word {
 
   public static final Word32 MAX = new Word32(MAX_VALUE);
 
+  public static final Word32 ZERO = MIN;
+
   protected Word32(final long value) {
     super(value);
   }

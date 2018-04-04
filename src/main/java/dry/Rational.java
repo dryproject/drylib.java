@@ -23,6 +23,8 @@ public strictfp interface Rational extends Real {
     return new BigRational(numerator, denominator);
   }
 
+  public static final Rational ZERO = new BigRational(Integer.ZERO, Integer.ONE);
+
   @NotNull
   public Integer getNumerator();
 

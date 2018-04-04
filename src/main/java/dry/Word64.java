@@ -25,6 +25,8 @@ public final class Word64 extends AbstractWord implements Word {
 
   public static final Word64 MAX = new Word64(MAX_VALUE);
 
+  public static final Word64 ZERO = MIN;
+
   protected Word64(final long value) {
     super(value);
   }

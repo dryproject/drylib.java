@@ -24,6 +24,8 @@ public interface Word extends Number, Comparable<Word> {
 
   public static final Word MAX = Word64.MAX;
 
+  public static final Word ZERO = Word64.ZERO;
+
   public long getValue();
 
   public boolean is(long value);
