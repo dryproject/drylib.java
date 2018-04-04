@@ -9,8 +9,16 @@ import org.jetbrains.annotations.NotNull;
  */
 public interface Tensor<E> {
   /**
+   * Returns the tensor rank.
+   *
    * @see http://mathworld.wolfram.com/TensorRank.html
    */
   @NotNull
   public Natural getRank();
+
+  /**
+   * Returns the tensor shape.
+   */
+  @NotNull
+  public Natural[] getShape();
 }

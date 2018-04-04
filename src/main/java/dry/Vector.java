@@ -16,8 +16,13 @@ public interface Vector<E> extends Tensor<E>, Iterable<E> {
   }
 
   @Override @NotNull
+  default public Natural[] getShape() {
+    return new Natural[] {Natural.ZERO};
+  }
+
+  @Override @NotNull
   default public Iterator<E> iterator() {
-    assert false : "not implemented"; // TODO
+    assert false : "not implemented";
     return null;
   }
 

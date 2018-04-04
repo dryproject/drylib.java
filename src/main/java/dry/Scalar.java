@@ -12,4 +12,9 @@ public interface Scalar<E> extends Tensor<E> {
   default public Natural getRank() {
     return Natural.ZERO;
   }
+
+  @Override @NotNull
+  default public Natural[] getShape() {
+    return new Natural[] {};
+  }
 }

@@ -15,6 +15,11 @@ public interface Matrix<E> extends Tensor<E> {
     return Natural.TWO;
   }
 
+  @Override @NotNull
+  default public Natural[] getShape() {
+    return new Natural[] {Natural.ZERO, Natural.ZERO};
+  }
+
   @NotNull
   default public E get(@NotNull final Natural a,
                        @NotNull final Natural b) {
