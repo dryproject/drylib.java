@@ -2,11 +2,13 @@
 
 package dry;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Scalar.
  */
 public interface Scalar<E> extends Tensor<E> {
-  @Override
+  @Override @NotNull
   default public Natural getRank() {
     return Natural.ZERO;
   }
