@@ -62,6 +62,11 @@ public class Char extends java.lang.Object implements Scalar<Char>, Comparable<C
     return this.value;
   }
 
+  @Override
+  public boolean isZero() {
+    return this.value == 0L;
+  }
+
   public boolean is(final char value) {
     return this.value == (int)value;
   }

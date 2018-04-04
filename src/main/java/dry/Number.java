@@ -11,5 +11,6 @@ public strictfp interface Number extends Scalar<Number> {
 
   public boolean isInexact();
 
+  @Override
   public boolean isZero();
 }

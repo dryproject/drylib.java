@@ -21,4 +21,11 @@ public interface Tensor<E> {
    */
   @NotNull
   public Natural[] getShape();
+
+  /**
+   * Checks if this is a zero tensor.
+   *
+   * @see http://mathworld.wolfram.com/ZeroTensor.html
+   */
+  public boolean isZero();
 }
