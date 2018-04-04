@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Boolean (true or false).
  */
-public class Bool extends java.lang.Object implements Comparable<Bool> {
+public class Bool extends java.lang.Object implements Scalar<Bool>, Comparable<Bool> {
   @NotNull
   public static Bool valueOf(final boolean value) {
     return value ? TRUE : FALSE;

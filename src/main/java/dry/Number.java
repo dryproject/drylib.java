@@ -5,7 +5,7 @@ package dry;
 /**
  * Number.
  */
-public strictfp interface Number {
+public strictfp interface Number extends Scalar<Number> {
 
   public boolean isExact();
 

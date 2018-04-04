@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Character (Unicode code point).
  */
-public class Char extends java.lang.Object implements Comparable<Char> {
+public class Char extends java.lang.Object implements Scalar<Char>, Comparable<Char> {
   @NotNull
   public static Char valueOf(final int value) {
     return new Char(value);
