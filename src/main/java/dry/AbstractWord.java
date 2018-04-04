@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Machine word (native size).
+ * Base class for machine words.
  */
 public abstract class AbstractWord extends ExactNumber implements Word {
   private static final long serialVersionUID = 1L;

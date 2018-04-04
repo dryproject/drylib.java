@@ -3,7 +3,7 @@
 package dry;
 
 /**
- * Interface for number types.
+ * Number.
  */
 public strictfp interface Number {
 
