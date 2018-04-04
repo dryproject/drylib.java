@@ -38,6 +38,21 @@ public abstract strictfp class AbstractFloat extends InexactNumber implements Fl
   }
 
   @Override
+  public boolean isNaN() {
+    return java.lang.Double.isNaN(this.value);
+  }
+
+  @Override
+  public boolean isFinite() {
+    return java.lang.Double.isFinite(this.value);
+  }
+
+  @Override
+  public boolean isInfinite() {
+    return java.lang.Double.isInfinite(this.value);
+  }
+
+  @Override
   public boolean is(final double value) {
     return this.value == value;
   }
