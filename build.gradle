@@ -29,3 +29,11 @@ tasks.withType(JavaCompile).all {
 test {
   useJUnitPlatform()
 }
+
+// See: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.javadoc.Javadoc.html
+javadoc {
+  source = project.sourceSets.main.allJava
+  classpath = project.sourceSets.main.compileClasspath
+  title = project.reporting.apiDocTitle
+  options.encoding = 'UTF-8'
+}
