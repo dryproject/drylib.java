@@ -5,9 +5,9 @@ package dry;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Tensor.
+ * A tensor.
  */
-public interface Tensor<E> {
+public interface Tensor<E> extends Datum {
   /**
    * Returns the tensor rank.
    *

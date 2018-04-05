@@ -8,9 +8,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Symbol.
+ * A symbol.
  */
-public interface Symbol extends Comparable<Symbol> {
+public interface Symbol extends Datum, Comparable<Symbol> {
   @NotNull
   public static Symbol of(final char character) {
     return new StringSymbol(java.lang.Character.toString(character));
