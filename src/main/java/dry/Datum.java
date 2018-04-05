@@ -5,6 +5,6 @@ package dry;
 /**
  * A datum.
  *
- * @see https://en.wikipedia.org/wiki/Datum_(disambiguation)
+ * @see <a href="https://en.wikipedia.org/wiki/Datum_(disambiguation)">[1]</a>
  */
 public interface Datum {}
