@@ -14,22 +14,22 @@ import org.jetbrains.annotations.Nullable;
  */
 public strictfp interface Real extends Complex {
   @NotNull
-  public static Real valueOf(final double value) {
+  public static Real of(final double value) {
     return new BigReal(BigDecimal.valueOf(value));
   }
 
   @NotNull
-  public static Real valueOf(final long value) {
+  public static Real of(final long value) {
     return new BigReal(BigDecimal.valueOf(value));
   }
 
   @NotNull
-  public static Real valueOf(@NotNull final BigDecimal value) {
+  public static Real of(@NotNull final BigDecimal value) {
     return new BigReal(value);
   }
 
   @NotNull
-  public static Real valueOf(@NotNull final BigInteger value) {
+  public static Real of(@NotNull final BigInteger value) {
     return new BigReal(new BigDecimal(value));
   }
 

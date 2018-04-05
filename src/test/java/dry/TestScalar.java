@@ -10,6 +10,6 @@ class TestScalar {
 
   @Test
   void testInterface_Tensor() {
-    assertThat(Float.valueOf(1.24).getRank()).isEqualTo(Natural.ZERO);
+    assertThat(Float.of(1.24).getRank()).isEqualTo(Natural.ZERO);
   }
 }

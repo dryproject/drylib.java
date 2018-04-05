@@ -11,23 +11,23 @@ import org.jetbrains.annotations.NotNull;
  */
 public strictfp interface Float extends Real, Comparable<Float> {
   @NotNull
-  public static Float valueOf(final double value) {
-    return Float64.valueOf(value);
+  public static Float of(final double value) {
+    return Float64.of(value);
   }
 
   @NotNull
-  public static Float valueOf(final float value) {
-    return Float64.valueOf(value);
+  public static Float of(final float value) {
+    return Float64.of(value);
   }
 
   @NotNull
-  public static Float valueOf(@NotNull final java.lang.Double value) {
-    return Float64.valueOf(value);
+  public static Float of(@NotNull final java.lang.Double value) {
+    return Float64.of(value);
   }
 
   @NotNull
-  public static Float valueOf(@NotNull final java.lang.Float value) {
-    return Float64.valueOf(value);
+  public static Float of(@NotNull final java.lang.Float value) {
+    return Float64.of(value);
   }
 
   public static final int SIZE = Float64.SIZE;

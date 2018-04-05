@@ -11,12 +11,12 @@ import org.jetbrains.annotations.NotNull;
  */
 public strictfp class Natural extends Integer.Bignum implements Integer {
   @NotNull
-  public static Natural valueOf(final long value) {
+  public static Natural of(final long value) {
     return new Natural(value);
   }
 
   @NotNull
-  public static Natural valueOf(@NotNull final BigInteger value) {
+  public static Natural of(@NotNull final BigInteger value) {
     return new Natural(value);
   }
 

@@ -10,8 +10,8 @@ class TestFloat {
 
   @Test
   void testConstructWithNull() {
-    assertThatNullPointerException().isThrownBy(() -> { Float.valueOf((java.lang.Double)null); });
-    assertThatNullPointerException().isThrownBy(() -> { Float.valueOf((java.lang.Float)null); });
+    assertThatNullPointerException().isThrownBy(() -> { Float.of((java.lang.Double)null); });
+    assertThatNullPointerException().isThrownBy(() -> { Float.of((java.lang.Float)null); });
   }
 
   @Test
@@ -29,6 +29,6 @@ class TestFloat {
 
   @Test
   void testMethod_toString() {
-    assertThat(Float.valueOf(1.23d).toString()).isEqualTo("1.23");
+    assertThat(Float.of(1.23d).toString()).isEqualTo("1.23");
   }
 }

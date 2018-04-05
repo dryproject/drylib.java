@@ -10,7 +10,7 @@ class TestInteger {
 
   @Test
   void testConstructWithNull() {
-    assertThatNullPointerException().isThrownBy(() -> { Integer.valueOf(null); });
+    assertThatNullPointerException().isThrownBy(() -> { Integer.of(null); });
   }
 
   @Test
@@ -23,7 +23,7 @@ class TestInteger {
 
   @Test
   void testMethod_toString() {
-    assertThat(Integer.valueOf(-1).toString()).isEqualTo("-1");
-    assertThat(Integer.valueOf(0).toString()).isEqualTo("0");
+    assertThat(Integer.of(-1).toString()).isEqualTo("-1");
+    assertThat(Integer.of(0).toString()).isEqualTo("0");
   }
 }

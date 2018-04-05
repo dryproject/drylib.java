@@ -11,22 +11,22 @@ import org.jetbrains.annotations.NotNull;
  */
 public final strictfp class Float64 extends AbstractFloat implements Float {
   @NotNull
-  public static Float64 valueOf(final double value) {
+  public static Float64 of(final double value) {
     return new Float64(value);
   }
 
   @NotNull
-  public static Float64 valueOf(final float value) {
+  public static Float64 of(final float value) {
     return new Float64((double)value);
   }
 
   @NotNull
-  public static Float64 valueOf(@NotNull final java.lang.Double value) {
+  public static Float64 of(@NotNull final java.lang.Double value) {
     return new Float64(Objects.requireNonNull(value).doubleValue());
   }
 
   @NotNull
-  public static Float64 valueOf(@NotNull final java.lang.Float value) {
+  public static Float64 of(@NotNull final java.lang.Float value) {
     return new Float64(Objects.requireNonNull(value).doubleValue());
   }
 

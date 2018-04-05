@@ -12,20 +12,20 @@ import org.jetbrains.annotations.Nullable;
  */
 public strictfp interface Complex extends Number {
   @NotNull
-  public static Complex valueOf(final long real,
-                                final long imaginary) {
-    return new RealComplex(Real.valueOf(real), Real.valueOf(imaginary));
+  public static Complex of(final long real,
+                           final long imaginary) {
+    return new RealComplex(Real.of(real), Real.of(imaginary));
   }
 
   @NotNull
-  public static Complex valueOf(final double real,
-                                final double imaginary) {
-    return new RealComplex(Real.valueOf(real), Real.valueOf(imaginary));
+  public static Complex of(final double real,
+                           final double imaginary) {
+    return new RealComplex(Real.of(real), Real.of(imaginary));
   }
 
   @NotNull
-  public static Complex valueOf(@NotNull final Real real,
-                                @NotNull final Real imaginary) {
+  public static Complex of(@NotNull final Real real,
+                           @NotNull final Real imaginary) {
     return new RealComplex(real, imaginary);
   }
 

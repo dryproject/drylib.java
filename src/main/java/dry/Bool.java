@@ -12,13 +12,13 @@ import org.jetbrains.annotations.Nullable;
  */
 public class Bool extends java.lang.Object implements Scalar<Bool>, Comparable<Bool> {
   @NotNull
-  public static Bool valueOf(final boolean value) {
+  public static Bool of(final boolean value) {
     return value ? TRUE : FALSE;
   }
 
   @NotNull
-  public static Bool valueOf(@NotNull final java.lang.Boolean value) {
-    return valueOf(Objects.requireNonNull(value).booleanValue());
+  public static Bool of(@NotNull final java.lang.Boolean value) {
+    return of(Objects.requireNonNull(value).booleanValue());
   }
 
   private static final long serialVersionUID = 1L;

@@ -10,8 +10,8 @@ import org.jetbrains.annotations.Nullable;
  */
 public interface Word extends Number, Comparable<Word> {
   @NotNull
-  public static Word valueOf(final long value) {
-    return Word64.valueOf(value);
+  public static Word of(final long value) {
+    return Word64.of(value);
   }
 
   public static final int SIZE = Word64.SIZE;

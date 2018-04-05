@@ -10,19 +10,19 @@ class TestChar {
 
   @Test
   void testConstructWithNull() {
-    assertThatNullPointerException().isThrownBy(() -> { Char.valueOf(null); });
+    assertThatNullPointerException().isThrownBy(() -> { Char.of(null); });
   }
 
   @Test
   void testInterface_Comparable() {
-    assertThat(Char.valueOf('a')).isEqualByComparingTo(Char.valueOf('a'));
-    assertThat(Char.valueOf('a')).isLessThan(Char.valueOf('b'));
-    assertThat(Char.valueOf('b')).isGreaterThan(Char.valueOf('a'));
+    assertThat(Char.of('a')).isEqualByComparingTo(Char.of('a'));
+    assertThat(Char.of('a')).isLessThan(Char.of('b'));
+    assertThat(Char.of('b')).isGreaterThan(Char.of('a'));
   }
 
   @Test
   void testMethod_toString() {
-    assertThat(Char.valueOf(0x41).toString()).isEqualTo("A");
-    assertThat(Char.valueOf(0x20000).toString()).isEqualTo("\uD840\uDC00");
+    assertThat(Char.of(0x41).toString()).isEqualTo("A");
+    assertThat(Char.of(0x20000).toString()).isEqualTo("\uD840\uDC00");
   }
 }

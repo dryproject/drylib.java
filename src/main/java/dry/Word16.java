@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public final class Word16 extends AbstractWord implements Word {
   @NotNull
-  public static Word16 valueOf(final long value) {
+  public static Word16 of(final long value) {
     return new Word16(value);
   }
 

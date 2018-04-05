@@ -10,7 +10,7 @@ class TestWord64 {
 
   @Test
   void testConstructWithNull() {
-    //assertThatNullPointerException().isThrownBy(() -> { Word64.valueOf(null); });
+    //assertThatNullPointerException().isThrownBy(() -> { Word64.of(null); });
   }
 
   @Test

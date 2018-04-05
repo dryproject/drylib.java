@@ -25,7 +25,7 @@ class TestSymbol {
   @Test
   void testMethod_toString() {
     assertThat(Symbol.of('A').toString()).isEqualTo("A");
-    assertThat(Symbol.of(Char.valueOf(0x41)).toString()).isEqualTo("A");
-    assertThat(Symbol.of(Char.valueOf(0x20000)).toString()).isEqualTo("\uD840\uDC00");
+    assertThat(Symbol.of(Char.of(0x41)).toString()).isEqualTo("A");
+    assertThat(Symbol.of(Char.of(0x20000)).toString()).isEqualTo("\uD840\uDC00");
   }
 }

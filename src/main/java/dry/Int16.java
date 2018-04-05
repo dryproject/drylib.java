@@ -11,12 +11,12 @@ import org.jetbrains.annotations.NotNull;
  */
 public final strictfp class Int16 extends Integer.Fixnum implements Int {
   @NotNull
-  public static Int16 valueOf(final long value) {
+  public static Int16 of(final long value) {
     return new Int16(value);
   }
 
   @NotNull
-  public static Int16 valueOf(@NotNull final BigInteger value) {
+  public static Int16 of(@NotNull final BigInteger value) {
     return new Int16(value);
   }
 

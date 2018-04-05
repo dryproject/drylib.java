@@ -13,12 +13,12 @@ import org.jetbrains.annotations.Nullable;
  */
 public strictfp interface Integer extends Rational, Comparable<Integer> {
   @NotNull
-  public static Integer valueOf(final long value) {
+  public static Integer of(final long value) {
     return new Bignum(value);
   }
 
   @NotNull
-  public static Integer valueOf(@NotNull final BigInteger value) {
+  public static Integer of(@NotNull final BigInteger value) {
     return new Bignum(value);
   }
 

@@ -10,7 +10,7 @@ class TestInt32 {
 
   @Test
   void testConstructWithNull() {
-    assertThatNullPointerException().isThrownBy(() -> { Int32.valueOf(null); });
+    assertThatNullPointerException().isThrownBy(() -> { Int32.of(null); });
   }
 
   @Test
@@ -20,7 +20,7 @@ class TestInt32 {
 
   @Test
   void testMethod_toString() {
-    assertThat(Int32.valueOf(-1).toString()).isEqualTo("-1");
-    assertThat(Int32.valueOf(0).toString()).isEqualTo("0");
+    assertThat(Int32.of(-1).toString()).isEqualTo("-1");
+    assertThat(Int32.of(0).toString()).isEqualTo("0");
   }
 }

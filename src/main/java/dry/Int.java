@@ -11,13 +11,13 @@ import org.jetbrains.annotations.NotNull;
  */
 public strictfp interface Int extends Integer {
   @NotNull
-  public static Int valueOf(final long value) {
-    return Int64.valueOf(value);
+  public static Int of(final long value) {
+    return Int64.of(value);
   }
 
   @NotNull
-  public static Int valueOf(@NotNull final BigInteger value) {
-    return Int64.valueOf(value);
+  public static Int of(@NotNull final BigInteger value) {
+    return Int64.of(value);
   }
 
   public static final int SIZE = Int64.SIZE;

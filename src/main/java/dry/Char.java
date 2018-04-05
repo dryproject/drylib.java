@@ -12,17 +12,17 @@ import org.jetbrains.annotations.Nullable;
  */
 public class Char extends java.lang.Object implements Scalar<Char>, Comparable<Char> {
   @NotNull
-  public static Char valueOf(final int value) {
+  public static Char of(final int value) {
     return new Char(value);
   }
 
   @NotNull
-  public static Char valueOf(final char value) {
+  public static Char of(final char value) {
     return new Char(value);
   }
 
   @NotNull
-  public static Char valueOf(@NotNull final java.lang.Character value) {
+  public static Char of(@NotNull final java.lang.Character value) {
     return new Char(value);
   }
 

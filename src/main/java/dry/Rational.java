@@ -12,14 +12,14 @@ import org.jetbrains.annotations.Nullable;
  */
 public strictfp interface Rational extends Real {
   @NotNull
-  public static Rational valueOf(final long numerator,
-                                 final long denominator) {
-    return new BigRational(Integer.valueOf(numerator), Integer.valueOf(denominator));
+  public static Rational of(final long numerator,
+                            final long denominator) {
+    return new BigRational(Integer.of(numerator), Integer.of(denominator));
   }
 
   @NotNull
-  public static Rational valueOf(@NotNull final Integer numerator,
-                                 @NotNull final Integer denominator) {
+  public static Rational of(@NotNull final Integer numerator,
+                            @NotNull final Integer denominator) {
     return new BigRational(numerator, denominator);
   }
 

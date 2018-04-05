@@ -10,13 +10,13 @@ class TestComplex {
 
   @Test
   void testConstructWithNull() {
-    assertThatNullPointerException().isThrownBy(() -> { Complex.valueOf(null, null); });
+    assertThatNullPointerException().isThrownBy(() -> { Complex.of(null, null); });
   }
 
   @Test
   void testMethod_toString() {
-    assertThat(Complex.valueOf(1.0, 3.0).toString()).isEqualTo("1.0+3.0i");
-    assertThat(Complex.valueOf(1.0, -3.0).toString()).isEqualTo("1.0-3.0i");
-    assertThat(Complex.valueOf(-1.0, 0.0).toString()).isEqualTo("-1.0+0.0i");
+    assertThat(Complex.of(1.0, 3.0).toString()).isEqualTo("1.0+3.0i");
+    assertThat(Complex.of(1.0, -3.0).toString()).isEqualTo("1.0-3.0i");
+    assertThat(Complex.of(-1.0, 0.0).toString()).isEqualTo("-1.0+0.0i");
   }
 }
