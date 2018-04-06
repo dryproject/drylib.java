@@ -9,14 +9,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see <a href="https://en.wikipedia.org/wiki/Quantity">[1]</a>
  */
-public interface Quantity extends Datum {
-
-  /**
-   * The unit of measurement.
-   *
-   * @return the unit
-   */
-  public @NotNull Unit getUnit();
+public interface Quantity<Q extends Quantity<Q>> extends Datum {
 
   /**
    * The numerical value of this quantity.
@@ -24,4 +17,11 @@ public interface Quantity extends Datum {
    * @return the numerical value
    */
   public @NotNull Number getValue();
+
+  /**
+   * The unit of measurement.
+   *
+   * @return the unit
+   */
+  public @NotNull Unit<Q> getUnit();
 }

@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see <a href="https://en.wiktionary.org/wiki/quantifiable">[1]</a>
  */
-public interface Quantifiable {
+public interface Quantifiable<Q extends Quantity<Q>> {
 
-  public @NotNull Quantity getQuantity();
+  public @NotNull Q getQuantity();
 }

@@ -7,6 +7,6 @@ package dry;
  *
  * @see <a href="https://en.wikipedia.org/wiki/Units_of_measurement">[1]</a>
  */
-public interface Unit extends Datum {
+public interface Unit<Q extends Quantity<Q>> extends Datum {
   // TODO
 }
