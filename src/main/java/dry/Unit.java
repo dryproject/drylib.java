@@ -5,7 +5,7 @@ package dry;
 /**
  * A unit of measurement.
  *
- * @see <a href="https://en.wikipedia.org/wiki/Units_of_measurement">[1]</a>
+ * @see <a href="https://drylib.org/core/unit">[1]</a>
  */
 public interface Unit<Q extends Quantity<Q>> extends Datum {
   // TODO

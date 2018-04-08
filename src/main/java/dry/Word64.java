@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Machine word (64-bit).
+ *
+ * @see <a href="https://drylib.org/core/word64">[1]</a>
  */
 public final class Word64 extends AbstractWord implements Word {
   @NotNull

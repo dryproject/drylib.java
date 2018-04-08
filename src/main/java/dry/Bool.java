@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Boolean (true or false).
+ *
+ * @see <a href="https://drylib.org/core/bool">[1]</a>
  */
 public class Bool extends java.lang.Object implements Scalar<Bool>, Comparable<Bool> {
   @NotNull

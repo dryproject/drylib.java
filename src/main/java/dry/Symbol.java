@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A symbol.
+ *
+ * @see <a href="https://drylib.org/core/symbol">[1]</a>
  */
 public interface Symbol extends Datum, Comparable<Symbol> {
   @NotNull

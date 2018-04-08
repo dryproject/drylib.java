@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Machine word (8-bit).
+ *
+ * @see <a href="https://drylib.org/core/word8">[1]</a>
  */
 public final class Word8 extends AbstractWord implements Word {
   @NotNull

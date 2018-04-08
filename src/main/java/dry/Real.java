@@ -11,6 +11,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Real number (arbitrary size).
+ *
+ * @see <a href="https://drylib.org/core/real">[1]</a>
  */
 public strictfp interface Real extends Complex {
   @NotNull

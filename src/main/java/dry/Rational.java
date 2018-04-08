@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Rational number (arbitrary size).
+ *
+ * @see <a href="https://drylib.org/core/rational">[1]</a>
  */
 public strictfp interface Rational extends Real {
   @NotNull

@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Integer number (32-bit).
+ *
+ * @see <a href="https://drylib.org/core/int32">[1]</a>
  */
 public final strictfp class Int32 extends Integer.Fixnum implements Int {
   @NotNull

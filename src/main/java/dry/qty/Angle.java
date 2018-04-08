@@ -7,6 +7,6 @@ import dry.Quantity;
 /**
  * An angle.
  *
- * @see <a href="https://en.wikipedia.org/wiki/Angle">[1]</a>
+ * @see <a href="https://drylib.org/qty/angle">[1]</a>
  */
 public interface Angle extends Quantity<Angle> {}

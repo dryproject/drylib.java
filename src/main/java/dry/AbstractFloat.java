@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Base class for floating-point numbers.
+ *
+ * @see <a href="https://drylib.org/java">[1]</a>
  */
 public abstract strictfp class AbstractFloat extends InexactNumber implements Float {
   private static final long serialVersionUID = 1L;

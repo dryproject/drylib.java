@@ -7,6 +7,6 @@ import dry.Quantity;
 /**
  * Mass.
  *
- * @see <a href="https://en.wikipedia.org/wiki/Mass">[1]</a>
+ * @see <a href="https://drylib.org/qty/mass">[1]</a>
  */
 public interface Mass extends Quantity<Mass> {}

@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Natural number (arbitrary size).
+ *
+ * @see <a href="https://drylib.org/core/natural">[1]</a>
  */
 public strictfp class Natural extends Integer.Bignum implements Integer {
   @NotNull

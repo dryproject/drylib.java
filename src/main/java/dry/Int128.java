@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Integer number (128-bit).
+ *
+ * @see <a href="https://drylib.org/core/int128">[1]</a>
  */
 public final strictfp class Int128 extends Integer.Bignum implements Int {
   @NotNull

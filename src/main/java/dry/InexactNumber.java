@@ -2,6 +2,11 @@
 
 package dry;
 
+/**
+ * Base class for inexact numbers.
+ *
+ * @see <a href="https://drylib.org/java">[1]</a>
+ */
 public abstract strictfp class InexactNumber extends AbstractNumber {
   private static final long serialVersionUID = 1L;
 

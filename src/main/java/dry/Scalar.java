@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Scalar.
+ *
+ * @see <a href="https://drylib.org/core/scalar">[1]</a>
  */
 public interface Scalar<E> extends Tensor<E> {
   @Override @NotNull

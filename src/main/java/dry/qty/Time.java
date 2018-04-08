@@ -7,6 +7,6 @@ import dry.Quantity;
 /**
  * Time.
  *
- * @see <a href="https://en.wikipedia.org/wiki/Time">[1]</a>
+ * @see <a href="https://drylib.org/qty/time">[1]</a>
  */
 public interface Time extends Quantity<Time> {}

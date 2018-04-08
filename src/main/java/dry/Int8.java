@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Integer number (8-bit).
+ *
+ * @see <a href="https://drylib.org/core/int8">[1]</a>
  */
 public final strictfp class Int8 extends Integer.Fixnum implements Int {
   @NotNull

@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Floating-point number (32-bit single-precision)
+ *
+ * @see <a href="https://drylib.org/core/float32">[1]</a>
  */
 public final strictfp class Float32 extends AbstractFloat implements Float {
   @NotNull

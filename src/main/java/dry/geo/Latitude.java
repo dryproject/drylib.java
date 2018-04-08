@@ -7,7 +7,7 @@ import dry.qty.Angle;
 /**
  * A latitude angle.
  *
- * @see <a href="https://en.wikipedia.org/wiki/Latitude">[1]</a>
+ * @see <a href="https://drylib.org/geo/latitude">[1]</a>
  */
 public interface Latitude extends Quantity<Angle> {
   // TODO

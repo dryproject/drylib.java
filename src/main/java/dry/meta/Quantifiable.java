@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Something quantifiable.
  *
- * @see <a href="https://en.wiktionary.org/wiki/quantifiable">[1]</a>
+ * @see <a href="https://drylib.org/meta/quantifiable">[1]</a>
  */
 public interface Quantifiable<Q extends Quantity<Q>> {
 

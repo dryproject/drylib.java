@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Matrix.
+ *
+ * @see <a href="https://drylib.org/core/matrix">[1]</a>
  */
 public interface Matrix<E> extends Tensor<E> {
   @Override @NotNull

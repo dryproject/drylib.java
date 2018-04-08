@@ -7,6 +7,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Machine word (native size).
+ *
+ * @see <a href="https://drylib.org/core/word">[1]</a>
  */
 public interface Word extends Number, Comparable<Word> {
   @NotNull

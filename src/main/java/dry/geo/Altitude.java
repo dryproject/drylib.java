@@ -7,7 +7,7 @@ import dry.qty.Length;
 /**
  * An altitude.
  *
- * @see <a href="https://en.wikipedia.org/wiki/Altitude">[1]</a>
+ * @see <a href="https://drylib.org/geo/altitude">[1]</a>
  */
 public interface Altitude extends Quantity<Length> {
   // TODO

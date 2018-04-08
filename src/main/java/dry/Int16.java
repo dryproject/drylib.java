@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Integer number (16-bit).
+ *
+ * @see <a href="https://drylib.org/core/int16">[1]</a>
  */
 public final strictfp class Int16 extends Integer.Fixnum implements Int {
   @NotNull

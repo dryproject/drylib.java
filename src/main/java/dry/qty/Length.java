@@ -7,6 +7,6 @@ import dry.Quantity;
 /**
  * Length.
  *
- * @see <a href="https://en.wikipedia.org/wiki/Length">[1]</a>
+ * @see <a href="https://drylib.org/qty/length">[1]</a>
  */
 public interface Length extends Quantity<Length> {}

@@ -2,5 +2,7 @@
 
 /**
  * DRYlib for Java.
+ *
+ * @see <a href="https://drylib.org/java">[1]</a>
  */
 package dry;
