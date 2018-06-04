@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Vector.
  *
- * @see <a href="https://drylib.org/core/vector">[1]</a>
+ * @see <a href="https://drylib.org/base/vector">[1]</a>
  */
 public interface Vector<E> extends Tensor<E>, Iterable<E> {
   @Override @NotNull

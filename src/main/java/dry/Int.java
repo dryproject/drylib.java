@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Integer number (native size).
  *
- * @see <a href="https://drylib.org/core/int">[1]</a>
+ * @see <a href="https://drylib.org/base/int">[1]</a>
  */
 public strictfp interface Int extends Integer {
   @NotNull

@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * An interval.
  *
- * @see <a href="https://drylib.org/core/interval">[1]</a>
+ * @see <a href="https://drylib.org/base/interval">[1]</a>
  */
 public interface Interval<E> extends Datum {
   // TODO

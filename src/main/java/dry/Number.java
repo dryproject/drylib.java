@@ -5,7 +5,7 @@ package dry;
 /**
  * Number.
  *
- * @see <a href="https://drylib.org/core/number">[1]</a>
+ * @see <a href="https://drylib.org/base/number">[1]</a>
  */
 public strictfp interface Number extends Scalar<Number> {
 

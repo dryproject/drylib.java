@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Integer number (arbitrary size).
  *
- * @see <a href="https://drylib.org/core/integer">[1]</a>
+ * @see <a href="https://drylib.org/base/integer">[1]</a>
  */
 public strictfp interface Integer extends Rational, Comparable<Integer> {
   @NotNull

@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Floating-point number (native size).
  *
- * @see <a href="https://drylib.org/core/float">[1]</a>
+ * @see <a href="https://drylib.org/base/float">[1]</a>
  */
 public strictfp interface Float extends Real, Comparable<Float> {
   @NotNull

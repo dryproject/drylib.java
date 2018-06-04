@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Complex number (arbitrary size).
  *
- * @see <a href="https://drylib.org/core/complex">[1]</a>
+ * @see <a href="https://drylib.org/base/complex">[1]</a>
  */
 public strictfp interface Complex extends Number {
   @NotNull

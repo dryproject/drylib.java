@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Floating-point number (64-bit double-precision).
  *
- * @see <a href="https://drylib.org/core/float64">[1]</a>
+ * @see <a href="https://drylib.org/base/float64">[1]</a>
  */
 public final strictfp class Float64 extends AbstractFloat implements Float {
   @NotNull

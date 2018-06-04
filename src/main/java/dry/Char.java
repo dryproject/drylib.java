@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Character (Unicode code point).
  *
- * @see <a href="https://drylib.org/core/char">[1]</a>
+ * @see <a href="https://drylib.org/base/char">[1]</a>
  */
 public class Char extends java.lang.Object implements Scalar<Char>, Comparable<Char> {
   @NotNull

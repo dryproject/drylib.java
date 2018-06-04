@@ -5,6 +5,6 @@ package dry;
 /**
  * A datum.
  *
- * @see <a href="https://drylib.org/core/datum">[1]</a>
+ * @see <a href="https://drylib.org/base/datum">[1]</a>
  */
 public interface Datum {}

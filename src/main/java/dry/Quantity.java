@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * A quantity.
  *
- * @see <a href="https://drylib.org/core/quantity">[1]</a>
+ * @see <a href="https://drylib.org/base/quantity">[1]</a>
  */
 public interface Quantity<Q extends Quantity<Q>> extends Datum {
 

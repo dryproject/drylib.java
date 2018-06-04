@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * A tensor.
  *
- * @see <a href="https://drylib.org/core/tensor">[1]</a>
+ * @see <a href="https://drylib.org/base/tensor">[1]</a>
  */
 public interface Tensor<E> extends Datum {
   /**

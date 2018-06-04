@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Machine word (32-bit).
  *
- * @see <a href="https://drylib.org/core/word32">[1]</a>
+ * @see <a href="https://drylib.org/base/word32">[1]</a>
  */
 public final class Word32 extends AbstractWord implements Word {
   @NotNull
