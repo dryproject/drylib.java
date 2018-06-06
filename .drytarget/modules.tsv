@@ -1,20 +1,23 @@
-dry/base	package	dry
-dry/bits	package	dry.bits
-dry/code	package	dry.code
-dry/crypto	package	dry.crypto
-dry/data	package	dry.data
-dry/ffi	package	dry.ffi
-dry/geo	package	dry.geo
-dry/io	package	dry.io
-dry/lang	package	dry.lang
-dry/logic	package	dry.logic
-dry/math	package	dry.math
-dry/media	package	dry.media
-dry/meta	package	dry.meta
-dry/net	package	dry.net
-dry/qty	package	dry.qty
-dry/std	package	dry.std
-dry/sys	package	dry.sys
-dry/text	package	dry.text
-dry/time	package	dry.time
-dry/util	package	dry.util
+dry:base	package	dry	WIP
+dry:bits	package	dry.bits	TODO
+dry:code	package	dry.code	N/A
+dry:crypto	package	dry.crypto	TODO
+dry:data	package	dry.data	TODO
+dry:ffi	package	dry.ffi	N/A
+dry:geo	package	dry.geo	TODO
+dry:io	package	dry.io	TODO
+dry:lang	package	dry.lang	TODO
+dry:logic	package	dry.logic	TODO
+dry:math	package	dry.math	WIP
+dry:media	package	dry.media	TODO
+dry:meta	package	dry.meta	WIP
+dry:net	package	dry.net	TODO
+dry:qty	package	dry.qty	TODO
+dry:std	package	dry.std	TODO
+dry:sys	package	dry.sys	TODO
+dry:text	package	dry.text	WIP
+dry:text/ascii	package	dry.text.ascii	WIP
+dry:text/printf	package	dry.text.printf	WIP
+dry:text/utf8	package	dry.text.utf8	WIP
+dry:time	package	dry.time	TODO
+dry:util	package	dry.util	TODO
