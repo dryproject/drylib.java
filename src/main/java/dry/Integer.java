@@ -153,7 +153,7 @@ public strictfp interface Integer extends Rational, Comparable<Integer> {
     }
 
     @Override @NotNull
-    public String toString() {
+    public java.lang.String toString() {
       return this.value.toString();
     }
   }

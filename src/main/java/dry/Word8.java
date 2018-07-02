@@ -34,7 +34,7 @@ public final class Word8 extends AbstractWord implements Word {
   }
 
   @Override @NotNull
-  public String toString() {
+  public java.lang.String toString() {
     return java.lang.String.format("0x%02x", this.value);
   }
 }

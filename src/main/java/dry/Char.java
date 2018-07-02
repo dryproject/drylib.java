@@ -97,9 +97,9 @@ public class Char extends java.lang.Object implements Scalar<Char>, Comparable<C
   }
 
   @Override @NotNull
-  public String toString() {
+  public java.lang.String toString() {
     return (this.value <= java.lang.Character.MAX_VALUE) ?
       java.lang.Character.toString((char)this.value) :
-      String.valueOf(java.lang.Character.toChars(this.value));
+      java.lang.String.valueOf(java.lang.Character.toChars(this.value));
   }
 }

@@ -74,7 +74,7 @@ public class Bool extends java.lang.Object implements Scalar<Bool>, Comparable<B
   }
 
   @Override @NotNull
-  public String toString() {
+  public java.lang.String toString() {
     return java.lang.Boolean.toString(this.value);
   }
 }

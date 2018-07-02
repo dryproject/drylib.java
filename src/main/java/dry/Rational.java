@@ -98,7 +98,7 @@ public strictfp interface Rational extends Real {
     }
 
     @Override @NotNull
-    public String toString() {
+    public java.lang.String toString() {
       return java.lang.String.format("%s/%s", this.numerator, this.denominator);
     }
   }

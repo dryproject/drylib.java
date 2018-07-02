@@ -82,7 +82,7 @@ public strictfp interface Complex extends Number {
     }
 
     @Override @NotNull
-    public String toString() {
+    public java.lang.String toString() {
       final StringBuilder buffer = new StringBuilder();
 
       buffer.append(this.real.toString());

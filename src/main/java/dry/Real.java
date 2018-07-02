@@ -130,7 +130,7 @@ public strictfp interface Real extends Complex {
     }
 
     @Override @NotNull
-    public String toString() {
+    public java.lang.String toString() {
       return this.value.toString();
     }
   }

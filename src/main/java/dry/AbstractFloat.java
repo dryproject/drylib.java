@@ -136,7 +136,7 @@ public abstract strictfp class AbstractFloat extends InexactNumber implements Fl
   }
 
   @Override @NotNull
-  public String toString() {
+  public java.lang.String toString() {
     return java.lang.Double.toString(this.value);
   }
 }
