@@ -16,8 +16,8 @@ dry:qty	package	dry.qty	TODO
 dry:std	package	dry.std	TODO
 dry:sys	package	dry.sys	TODO
 dry:text	package	dry.text	WIP
-dry:text/ascii	package	dry.text.ascii	WIP
-dry:text/printf	package	dry.text.printf	WIP
-dry:text/utf8	package	dry.text.utf8	WIP
+dry:text/ascii	interface	dry.text.ASCII	WIP
+dry:text/printf	interface	dry.text.Printf	WIP
+dry:text/utf8	interface	dry.text.UTF8	WIP
 dry:time	package	dry.time	TODO
 dry:util	package	dry.util	TODO
