@@ -22,7 +22,7 @@ abstract class AbstractWord extends ExactNumber implements Word {
   }
 
   @Override
-  public long getValue() {
+  public long value() {
     return this.value;
   }
 
@@ -62,6 +62,6 @@ abstract class AbstractWord extends ExactNumber implements Word {
 
   @Override
   public int compareTo(@NotNull final Word that) {
-    return java.lang.Long.compare(this.value, Objects.requireNonNull(that).getValue());
+    return java.lang.Long.compare(this.value, Objects.requireNonNull(that).value());
   }
 }

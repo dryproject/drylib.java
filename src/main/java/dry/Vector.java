@@ -13,12 +13,12 @@ import org.jetbrains.annotations.NotNull;
  */
 public interface Vector<E> extends Tensor<E>, Iterable<E> {
   @Override @NotNull
-  default public Natural getRank() {
+  default public Natural rank() {
     return Natural.ONE;
   }
 
   @Override @NotNull
-  default public Natural[] getShape() {
+  default public Natural[] shape() {
     return new Natural[] {Natural.ZERO};
   }
 

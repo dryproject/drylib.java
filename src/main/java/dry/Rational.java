@@ -28,10 +28,10 @@ public strictfp interface Rational extends Real {
   public static final Rational ZERO = new BigRational(Integer.ZERO, Integer.ONE);
 
   @NotNull
-  public Integer getNumerator();
+  public Integer numerator();
 
   @NotNull
-  public Integer getDenominator();
+  public Integer denominator();
 
   public boolean is(long value);
 
@@ -48,12 +48,12 @@ public strictfp interface Rational extends Real {
     }
 
     @Override @NotNull
-    public Integer getNumerator() {
+    public Integer numerator() {
       return this.numerator;
     }
 
     @Override @NotNull
-    public Integer getDenominator() {
+    public Integer denominator() {
       return this.denominator;
     }
 
@@ -68,18 +68,18 @@ public strictfp interface Rational extends Real {
     }
 
     @Override @NotNull
-    public Real getReal() {
+    public Real real() {
       return this;
     }
 
     @Override @NotNull
-    public Real getImaginary() {
+    public Real imaginary() {
       return Integer.ZERO;
     }
 
     @Override
     public int signum() {
-      return this.numerator.getValue().signum();
+      return this.numerator.value().signum();
     }
 
     @Override

@@ -16,12 +16,12 @@ public interface Quantity<Q extends Quantity<Q>> extends Datum {
    *
    * @return the numerical value
    */
-  public @NotNull Number getValue();
+  public @NotNull Number value();
 
   /**
    * The unit of measurement.
    *
    * @return the unit
    */
-  public @NotNull Unit<Q> getUnit();
+  public @NotNull Unit<Q> unit();
 }

@@ -60,7 +60,7 @@ public class Char extends java.lang.Object implements Scalar<Char>, Comparable<C
     return SIZE;
   }
 
-  public int getValue() {
+  public int value() {
     return this.value;
   }
 

@@ -44,7 +44,7 @@ public strictfp interface Float extends Real, Comparable<Float> {
 
   public int size();
 
-  public double getValue();
+  public double value();
 
   public boolean isNaN();
 

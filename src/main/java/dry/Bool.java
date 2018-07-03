@@ -41,7 +41,7 @@ public class Bool extends java.lang.Object implements Scalar<Bool>, Comparable<B
     return SIZE;
   }
 
-  public boolean getValue() {
+  public boolean value() {
     return this.value;
   }
 

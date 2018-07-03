@@ -19,7 +19,7 @@ public interface Tensor<E> extends Datum {
    * @return a nonnegative number
    */
   @NotNull
-  public Natural getRank();
+  public Natural rank();
 
   /**
    * Returns the tensor shape.
@@ -27,7 +27,7 @@ public interface Tensor<E> extends Datum {
    * @return an array of nonnegative numbers
    */
   @NotNull
-  public Natural[] getShape();
+  public Natural[] shape();
 
   /**
    * Checks if this is a zero tensor.

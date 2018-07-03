@@ -11,12 +11,12 @@ import org.jetbrains.annotations.NotNull;
  */
 public interface Scalar<E> extends Tensor<E> {
   @Override @NotNull
-  default public Natural getRank() {
+  default public Natural rank() {
     return Natural.ZERO;
   }
 
   @Override @NotNull
-  default public Natural[] getShape() {
+  default public Natural[] shape() {
     return new Natural[] {};
   }
 }

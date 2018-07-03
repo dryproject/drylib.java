@@ -33,7 +33,7 @@ public strictfp interface Integer extends Rational, Comparable<Integer> {
   public static final Integer TEN = Natural.TEN;
 
   @NotNull
-  public BigInteger getValue();
+  public BigInteger value();
 
   @Override
   public boolean is(long value);
@@ -90,7 +90,7 @@ public strictfp interface Integer extends Rational, Comparable<Integer> {
     }
 
     @Override @NotNull
-    public BigInteger getValue() {
+    public BigInteger value() {
       return this.value;
     }
 
@@ -149,7 +149,7 @@ public strictfp interface Integer extends Rational, Comparable<Integer> {
       if (that instanceof Bignum) {
         return this.value.compareTo(((Bignum)that).value);
       }
-      return this.value.compareTo(that.getValue()); // TODO: optimize
+      return this.value.compareTo(that.value()); // TODO: optimize
     }
 
     @Override @NotNull

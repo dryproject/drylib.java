@@ -13,27 +13,27 @@ abstract strictfp class AbstractInteger extends ExactNumber implements Integer {
   private static final long serialVersionUID = 1L;
 
   @Override @NotNull
-  public Integer getNumerator() {
+  public Integer numerator() {
     return this;
   }
 
   @Override @NotNull
-  public Integer getDenominator() {
+  public Integer denominator() {
     return Integer.ONE;
   }
 
   @Override @NotNull
-  public Real getReal() {
+  public Real real() {
     return this;
   }
 
   @Override @NotNull
-  public Real getImaginary() {
+  public Real imaginary() {
     return Integer.ZERO;
   }
 
   @Override
   public int signum() {
-    return this.getValue().signum();
+    return this.value().signum();
   }
 }

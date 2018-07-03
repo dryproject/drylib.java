@@ -34,10 +34,10 @@ public strictfp interface Complex extends Number {
   public static final Complex ZERO = new RealComplex(Real.ZERO, Real.ZERO);
 
   @NotNull
-  public Real getReal();
+  public Real real();
 
   @NotNull
-  public Real getImaginary();
+  public Real imaginary();
 
   final strictfp class RealComplex extends ExactNumber implements Complex {
     private static final long serialVersionUID = 1L;
@@ -52,12 +52,12 @@ public strictfp interface Complex extends Number {
     }
 
     @Override @NotNull
-    public Real getReal() {
+    public Real real() {
       return this.real;
     }
 
     @Override @NotNull
-    public Real getImaginary() {
+    public Real imaginary() {
       return this.imaginary;
     }
 

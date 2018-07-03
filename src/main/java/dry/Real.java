@@ -51,7 +51,7 @@ public strictfp interface Real extends Complex {
     }
 
     @NotNull
-    public BigDecimal getValue() {
+    public BigDecimal value() {
       return this.value;
     }
 
@@ -71,12 +71,12 @@ public strictfp interface Real extends Complex {
     }
 
     @NotNull
-    public Real getReal() {
+    public Real real() {
       return this;
     }
 
     @NotNull
-    public Real getImaginary() {
+    public Real imaginary() {
       return Integer.ZERO;
     }
 

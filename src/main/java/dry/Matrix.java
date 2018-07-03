@@ -13,12 +13,12 @@ import org.jetbrains.annotations.NotNull;
  */
 public interface Matrix<E> extends Tensor<E> {
   @Override @NotNull
-  default public Natural getRank() {
+  default public Natural rank() {
     return Natural.TWO;
   }
 
   @Override @NotNull
-  default public Natural[] getShape() {
+  default public Natural[] shape() {
     return new Natural[] {Natural.ZERO, Natural.ZERO};
   }
 

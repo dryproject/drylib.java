@@ -30,7 +30,7 @@ abstract strictfp class AbstractFloat extends InexactNumber implements Float {
   }
 
   @Override
-  public double getValue() {
+  public double value() {
     return this.value;
   }
 
@@ -70,12 +70,12 @@ abstract strictfp class AbstractFloat extends InexactNumber implements Float {
   }
 
   @Override @NotNull
-  public Real getReal() {
+  public Real real() {
     return this;
   }
 
   @Override @NotNull
-  public Real getImaginary() {
+  public Real imaginary() {
     return Integer.ZERO;
   }
 
@@ -132,7 +132,7 @@ abstract strictfp class AbstractFloat extends InexactNumber implements Float {
 
   @Override
   public int compareTo(@NotNull final Float that) {
-    return java.lang.Double.compare(this.value, Objects.requireNonNull(that).getValue());
+    return java.lang.Double.compare(this.value, Objects.requireNonNull(that).value());
   }
 
   @Override @NotNull

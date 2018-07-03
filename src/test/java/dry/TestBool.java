@@ -22,9 +22,9 @@ class TestBool {
   }
 
   @Test
-  void testMethod_getValue() {
-    assertThat(Bool.TRUE.getValue()).isEqualTo(true);
-    assertThat(Bool.FALSE.getValue()).isEqualTo(false);
+  void testMethod_value() {
+    assertThat(Bool.TRUE.value()).isEqualTo(true);
+    assertThat(Bool.FALSE.value()).isEqualTo(false);
   }
 
   @Test
