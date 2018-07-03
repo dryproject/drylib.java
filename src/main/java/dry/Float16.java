@@ -38,7 +38,7 @@ public final strictfp class Float16 extends AbstractFloat implements Float {
 
   public static final double MIN_VALUE = java.lang.Float.MIN_VALUE; // FIXME
 
-  public static final double MAX_VALUE = java.lang.Float.MAX_VALUE; // FIXME
+  public static final double MAX_VALUE = 65504d;
 
   public static final Float16 MIN = new Float16(MIN_VALUE);
 

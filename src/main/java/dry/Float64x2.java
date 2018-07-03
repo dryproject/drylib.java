@@ -33,6 +33,11 @@ public final strictfp class Float64x2 extends AbstractFloatVector<Float64> imple
     this.data = data;
   }
 
+  @Override @NotNull
+  public java.lang.String toString() {
+    return java.lang.String.format("[%.1f, %.1f]", this.data[0], this.data[1]);
+  }
+
   @Override
   public boolean isZero() {
     return this.data[0] == 0f && this.data[1] == 0f;
