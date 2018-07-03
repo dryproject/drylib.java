@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
  *
  * @see <a href="https://drylib.org/java">[1]</a>
  */
-public abstract class AbstractWord extends ExactNumber implements Word {
+abstract class AbstractWord extends ExactNumber implements Word {
   private static final long serialVersionUID = 1L;
 
   public final long value;

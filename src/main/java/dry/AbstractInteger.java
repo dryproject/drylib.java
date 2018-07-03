@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see <a href="https://drylib.org/java">[1]</a>
  */
-public abstract class AbstractInteger extends ExactNumber implements Integer {
+abstract strictfp class AbstractInteger extends ExactNumber implements Integer {
   private static final long serialVersionUID = 1L;
 
   @Override @NotNull

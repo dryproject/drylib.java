@@ -7,7 +7,7 @@ package dry;
  *
  * @see <a href="https://drylib.org/java">[1]</a>
  */
-public abstract strictfp class AbstractNumber extends java.lang.Number implements Number, java.io.Serializable {
+abstract strictfp class AbstractNumber extends java.lang.Number implements Number, java.io.Serializable {
   private static final long serialVersionUID = 1L;
 
   protected int signum() {

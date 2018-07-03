@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
  *
  * @see <a href="https://drylib.org/java">[1]</a>
  */
-public abstract strictfp class AbstractFloat extends InexactNumber implements Float {
+abstract strictfp class AbstractFloat extends InexactNumber implements Float {
   private static final long serialVersionUID = 1L;
 
   public final double value;
