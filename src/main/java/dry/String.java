@@ -2,6 +2,8 @@
 
 package dry;
 
+import java.nio.ByteBuffer;
+
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -10,17 +12,25 @@ import org.jetbrains.annotations.NotNull;
  * @see <a href="https://drylib.org/base/string">[1]</a>
  */
 public interface String extends Datum {
+  public @NotNull ByteBuffer buffer();
+
   /**
    * Checks if this string is empty.
    *
    * @return <tt>true</tt> if this is an empty string, <tt>false</tt> otherwise
    */
-  public boolean isEmpty();
+  default public boolean isEmpty() {
+    return buffer().capacity() == 0;
+  }
 
   /**
    * Checks if this string is blank.
    *
    * @return <tt>true</tt> if this is a blank string, <tt>false</tt> otherwise
    */
-  public boolean isBlank();
+  //public boolean isBlank();
+
+  default public @NotNull Nat size() {
+    return Nat.of(buffer().capacity());
+  }
 }
