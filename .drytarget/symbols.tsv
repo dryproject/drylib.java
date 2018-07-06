@@ -2,8 +2,10 @@ dry:base/bool	class	dry.Bool
 dry:base/char	class	dry.Char
 dry:base/complex	interface	dry.Complex
 dry:base/float	interface	dry.Float
+dry:base/float16	class	dry.Float16
 dry:base/float32	class	dry.Float32
 dry:base/float64	class	dry.Float64
+dry:base/float128	class	dry.Float128
 dry:base/int	class	dry.Int
 dry:base/int8	class	dry.Int8
 dry:base/int16	class	dry.Int16
