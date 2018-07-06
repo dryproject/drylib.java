@@ -9,5 +9,6 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see <a href="https://drylib.org/text/printf/">[1]</a>
  */
-public interface Printf {
+public final class Printf {
+  private Printf() {}
 }

@@ -12,7 +12,9 @@ import org.jetbrains.annotations.NotNull;
  * @see <a href="https://drylib.org/base/string">[1]</a>
  */
 public interface String extends Datum {
-  public @NotNull ByteBuffer buffer();
+  public @NotNull ByteBuffer buffer(); // @private
+
+  public @NotNull ByteBuffer toByteBuffer();
 
   /**
    * Checks if this string is empty.

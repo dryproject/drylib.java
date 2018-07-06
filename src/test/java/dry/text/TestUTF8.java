@@ -4,12 +4,11 @@ package dry.text;
 
 import static org.assertj.core.api.Assertions.*;
 
+import dry.*;
+import dry.String;
+
 import org.junit.jupiter.api.*;
 
 class TestUTF8 {
-
-  @Test
-  void testConstructWithNull() {
-    //assertThatNullPointerException().isThrownBy(() -> { String.of((Char)null); });
-  }
+  // TODO
 }
