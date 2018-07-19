@@ -11,7 +11,9 @@ dry:io	package	dry.io	TODO
 dry:lang	package	dry.lang	TODO
 dry:logic	package	dry.logic	TODO
 dry:math	package	dry.math	WIP
+dry:math	class	dry.Math	WIP
 dry:math/blas	package	dry.math.blas	WIP
+dry:math/blas	class	dry.math.BLAS	WIP
 dry:media	package	dry.media	TODO
 dry:meta	package	dry.meta	WIP
 dry:net	package	dry.net	TODO
