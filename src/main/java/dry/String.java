@@ -3,6 +3,7 @@
 package dry;
 
 import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -15,6 +16,8 @@ public interface String extends Datum {
   public @NotNull ByteBuffer buffer(); // @private
 
   public @NotNull ByteBuffer toByteBuffer();
+
+  public @NotNull Charset charset();
 
   /**
    * Checks if this string is empty.

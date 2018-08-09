@@ -23,9 +23,12 @@ public final class ASCII {
   private ASCII() {}
 
   public final static Charset CHARSET = StandardCharsets.US_ASCII;
+  public final static Char MIN_CHAR = Char.of(0);
+  public final static Char MAX_CHAR = Char.of(0x7F);
 
-  // TODO: MIN_CHAR
-  // TODO: MAX_CHAR
+  public static class ValidationException extends IllegalArgumentException {
+    private static final long serialVersionUID = 1L;
+  }
 
   /**
    * Implements <tt>dry:text/ascii/string</tt>.
@@ -33,79 +36,118 @@ public final class ASCII {
    * @see <a href="https://drylib.org/text/ascii/string">[1]</a>
    */
   public interface String extends dry.String {
-    public class ByteBufferString implements String {
-      protected final ByteBuffer buffer;
-
-      protected ByteBufferString(final @NotNull ByteBuffer buffer) {
-        this.buffer = Objects.requireNonNull(buffer);
-      }
-
-      @Override
-      public @NotNull ByteBuffer buffer() {
-        return this.buffer;
-      }
-
-      @Override
-      public @NotNull ByteBuffer toByteBuffer() {
-        return this.buffer.asReadOnlyBuffer();
-      }
-    }
-
-    public static String of(final byte input) {
-      // TODO: validate input
+    public static @NotNull String of(final byte input) {
+      if (input < MIN_CHAR.value) throw new ValidationException();
+      if (input > MAX_CHAR.value) throw new ValidationException();
       return new ByteBufferString(ByteBuffer.wrap(new byte[]{ input }));
     }
 
-    public static String of(final @NotNull byte[] input) {
-      // TODO: validate input
-      return new ByteBufferString(ByteBuffer.wrap(Objects.requireNonNull(input)));
+    public static @NotNull String of(final @NotNull byte[] input) {
+      for (final byte b : Objects.requireNonNull(input)) {
+        if (b < MIN_CHAR.value) throw new ValidationException();
+        if (b > MAX_CHAR.value) throw new ValidationException();
+      }
+      return new ByteBufferString(ByteBuffer.wrap(input));
     }
 
-    public static String of(final char input) {
-      // TODO: validate input
+    public static @NotNull String of(final char input) {
+      if (input < MIN_CHAR.value) throw new ValidationException();
+      if (input > MAX_CHAR.value) throw new ValidationException();
       return new ByteBufferString(CHARSET.encode(CharBuffer.wrap(new char[]{ input })));
     }
 
-    public static String of(final @NotNull char[] input) {
-      // TODO: validate input
-      return new ByteBufferString(CHARSET.encode(CharBuffer.wrap(Objects.requireNonNull(input))));
+    public static @NotNull String of(final @NotNull char[] input) {
+      for (final char c : Objects.requireNonNull(input)) {
+        if (c < MIN_CHAR.value) throw new ValidationException();
+        if (c > MAX_CHAR.value) throw new ValidationException();
+      }
+      return new ByteBufferString(CHARSET.encode(CharBuffer.wrap(input)));
     }
 
-    public static String of(final @NotNull Char input) {
-      final int codePoint = Objects.requireNonNull(input).value();
-      if (codePoint > 0x7F) {
-        // TODO: validate input
-      }
+    public static @NotNull String of(final @NotNull Char input) {
+      final int codePoint = Objects.requireNonNull(input).value;
+      if (codePoint > MAX_CHAR.value) throw new ValidationException();
       return new ByteBufferString(ByteBuffer.wrap(new byte[]{ (byte)codePoint }));
     }
 
-    public static String of(final @NotNull dry.String input) {
+    public static @NotNull String of(final @NotNull dry.String input) {
       Objects.requireNonNull(input);
-      // TODO: validate input
-      return null; // TODO
+      if (!ASCII.isValid(input)) throw new ValidationException();
+      return new ByteBufferString(input.toByteBuffer());
     }
 
-    public static String of(final @NotNull java.lang.Character input) {
+    public static @NotNull String of(final @NotNull java.lang.Character input) {
+      return of(Objects.requireNonNull(input).charValue());
+    }
+
+    public static @NotNull String of(final @NotNull java.lang.String input) {
+      Objects.requireNonNull(input).chars().forEach(c -> {
+        if (c < MIN_CHAR.value) throw new ValidationException();
+        if (c > MAX_CHAR.value) throw new ValidationException();
+      });
+      return new ByteBufferString(CHARSET.encode(input));
+    }
+
+    public static @NotNull String of(final @NotNull java.lang.CharSequence input) {
+      Objects.requireNonNull(input).chars().forEach(c -> {
+        if (c < MIN_CHAR.value) throw new ValidationException();
+        if (c > MAX_CHAR.value) throw new ValidationException();
+      });
+      return new ByteBufferString(CHARSET.encode(java.nio.CharBuffer.wrap(input)));
+    }
+
+    public static @NotNull String of(final @NotNull java.nio.CharBuffer input) {
       Objects.requireNonNull(input);
-      // TODO: validate input
-      return null; // TODO
+      try {
+        for (int i = 0; i < input.limit(); i++) {
+          final char c = input.get(i);
+          if (c < MIN_CHAR.value) throw new ValidationException();
+          if (c > MAX_CHAR.value) throw new ValidationException();
+        }
+      }
+      catch (final IndexOutOfBoundsException error) {
+        assert false : "unreachable";
+      }
+      return new ByteBufferString(CHARSET.encode(input));
     }
 
-    public static String of(final @NotNull java.lang.String input) {
-      return new ByteBufferString(CHARSET.encode(Objects.requireNonNull(input)));
-    }
-
-    public static String of(final @NotNull java.lang.CharSequence input) {
+    public static @NotNull String of(final @NotNull java.nio.ByteBuffer input) {
       Objects.requireNonNull(input);
-      return null; // TODO
+      try {
+        for (int i = 0; i < input.limit(); i++) {
+          final byte b = input.get(i);
+          if (b < MIN_CHAR.value) throw new ValidationException();
+          if (b > MAX_CHAR.value) throw new ValidationException();
+        }
+      }
+      catch (final IndexOutOfBoundsException error) {
+        assert false : "unreachable";
+      }
+      return new ByteBufferString(input);
+    }
+  } // interface String
+
+  // @private
+  public static class ByteBufferString implements String {
+    protected final ByteBuffer buffer;
+
+    protected ByteBufferString(final @NotNull ByteBuffer buffer) {
+      this.buffer = Objects.requireNonNull(buffer);
     }
 
-    public static String of(final @NotNull java.nio.CharBuffer input) {
-      return new ByteBufferString(CHARSET.encode(Objects.requireNonNull(input)));
+    @Override
+    public @NotNull ByteBuffer buffer() {
+      return this.buffer;
     }
 
-    public static String of(final @NotNull java.nio.ByteBuffer input) {
-      return new ByteBufferString(Objects.requireNonNull(input));
+    @Override
+    public @NotNull ByteBuffer toByteBuffer() {
+      return this.buffer.asReadOnlyBuffer();
+    }
+
+    @Override
+    public @NotNull Charset charset() {
+      return CHARSET;
     }
   }
 
@@ -156,7 +198,7 @@ public final class ASCII {
            final @NotNull Char character) {
     Objects.requireNonNull(string);
     Objects.requireNonNull(character);
-    if (character.value() > 0x7F) return false;
+    if (character.value() > MAX_CHAR.value) return false;
     return false; // TODO
   }
 
@@ -295,13 +337,22 @@ public final class ASCII {
    * @see <a href="https://drylib.org/text/ascii/valid%3F">[1]</a>
    */
   public static boolean
+  isValid(final char character) {
+    return character <= MAX_CHAR.value;
+  }
+  public static boolean
+  isValid(final @NotNull Char character) {
+    Objects.requireNonNull(character);
+    return character.value <= MAX_CHAR.value;
+  }
+  public static boolean
   isValid(final @NotNull String string) {
     Objects.requireNonNull(string);
-    return true;
+    return true; // pre-validated on construction
   }
   public static boolean
   isValid(final @NotNull dry.String string) {
     Objects.requireNonNull(string);
-    return false; // TODO
+    return true; // TODO: validate input
   }
 }

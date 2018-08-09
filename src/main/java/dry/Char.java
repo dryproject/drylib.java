@@ -15,11 +15,13 @@ import org.jetbrains.annotations.Nullable;
 public class Char extends java.lang.Object implements Scalar<Char>, Comparable<Char> {
   @NotNull
   public static Char of(final int value) {
+    // TODO: validate input
     return new Char(value);
   }
 
   @NotNull
   public static Char of(final char value) {
+    // TODO: validate input
     return new Char(value);
   }
 
