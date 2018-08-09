@@ -19,7 +19,7 @@ dependencies {
   compile 'com.intellij:annotations:+@jar'
   testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
-  testCompile 'org.assertj:assertj-core:3.9.1'
+  testCompile 'org.assertj:assertj-core:3.10.0'
 }
 
 tasks.withType(JavaCompile).all {
