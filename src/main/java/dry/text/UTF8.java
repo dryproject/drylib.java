@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 public final class UTF8 {
   private UTF8() {}
 
-  public final static Charset CHARSET = StandardCharsets.UTF_8;
+  public static final Charset CHARSET = StandardCharsets.UTF_8;
 
   /**
    * Implements <tt>dry:text/utf8/string</tt>.

@@ -12,11 +12,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see <a href="https://drylib.org/base/string">[1]</a>
  */
-public interface String extends Datum {
-  public @NotNull ByteBuffer buffer(); // @private
-
-  public @NotNull ByteBuffer toByteBuffer();
-
+public interface String extends Datum, Comparable<String> {
   public @NotNull Charset charset();
 
   /**
@@ -24,18 +20,22 @@ public interface String extends Datum {
    *
    * @return <tt>true</tt> if this is an empty string, <tt>false</tt> otherwise
    */
-  default public boolean isEmpty() {
-    return buffer().capacity() == 0;
-  }
+  public boolean isEmpty();
 
   /**
    * Checks if this string is blank.
    *
    * @return <tt>true</tt> if this is a blank string, <tt>false</tt> otherwise
    */
-  //public boolean isBlank();
+  public boolean isBlank();
 
-  default public @NotNull Nat size() {
-    return Nat.of(buffer().capacity());
+  public boolean is(final @NotNull java.lang.String string);
+
+  public @NotNull Nat size();
+
+  public @NotNull byte[] toByteArray();
+
+  default public @NotNull ByteBuffer toByteBuffer() {
+    return ByteBuffer.wrap(this.toByteArray());
   }
 }
