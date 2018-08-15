@@ -138,12 +138,20 @@ public final class ASCII {
       }
       return new ByteBufferString(input.slice());
     }
+
+    @Override
+    public @NotNull String clone();
   } // interface String
 
   // @private
   public static class EmptyString extends AbstractEmptyString implements String {
     protected EmptyString() {
       super();
+    }
+
+    @Override
+    public @NotNull String clone() {
+      return (String)super.clone();
     }
 
     @Override
@@ -164,6 +172,11 @@ public final class ASCII {
     }
 
     @Override
+    public @NotNull String clone() {
+      return (String)super.clone();
+    }
+
+    @Override
     public @NotNull Charset charset() {
       return CHARSET;
     }
@@ -178,6 +191,11 @@ public final class ASCII {
   public static class ByteBufferString extends AbstractByteBufferString implements String {
     protected ByteBufferString(final @NotNull ByteBuffer buffer) {
       super(Objects.requireNonNull(buffer));
+    }
+
+    @Override
+    public @NotNull String clone() {
+      return (String)super.clone();
     }
 
     @Override

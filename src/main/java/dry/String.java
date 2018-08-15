@@ -12,7 +12,9 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see <a href="https://drylib.org/base/string">[1]</a>
  */
-public interface String extends Datum, Comparable<String> {
+public interface String extends Datum, Comparable<String>, Cloneable {
+  public @NotNull String clone();
+
   public @NotNull Charset charset();
 
   /**

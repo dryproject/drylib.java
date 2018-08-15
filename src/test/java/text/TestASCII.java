@@ -106,6 +106,17 @@ class TestASCII {
 ////////////////////////////////////////////////////////////////////////////////
 
   @Test
+  void testCloneability() {
+    // See: https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#clone()
+    final ASCII.String x = ASCII.String.of("foobar");
+    assertThat(x.clone()).isNotSameAs(x);
+    assertThat(x.clone().getClass()).isSameAs(x.getClass());
+    assertThat(x.clone()).isEqualTo(x);
+  }
+
+////////////////////////////////////////////////////////////////////////////////
+
+  @Test
   void testMethod_isBlank() {
     assertThatNullPointerException().isThrownBy(() -> { ASCII.isBlank((String)null); });
     // TODO

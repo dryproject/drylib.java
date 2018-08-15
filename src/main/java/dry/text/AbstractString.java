@@ -127,4 +127,15 @@ abstract class AbstractString implements dry.String {
     Objects.requireNonNull(that);
     return Arrays.compare(this.toByteArray(), that.toByteArray()); // TODO: optimize this
   }
+
+  @Override
+  public @NotNull String clone() {
+    try {
+      return (String)super.clone();
+    }
+    catch (final CloneNotSupportedException error) {
+      assert false : "unreachable";
+      return null;
+    }
+  }
 }
