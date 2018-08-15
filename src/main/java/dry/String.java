@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
  * @see <a href="https://drylib.org/base/string">[1]</a>
  */
 public interface String extends Datum, Iterable<Char>, Comparable<String>, Cloneable, Readable, Serializable {
-  public static final long serialVersionUID = 1L;
+  static final long serialVersionUID = 1L;
 
   @Override
   public @NotNull java.util.Iterator<Char> iterator();

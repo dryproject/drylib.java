@@ -35,9 +35,17 @@ javadoc {
   source = project.sourceSets.main.allJava
   classpath = project.sourceSets.main.compileClasspath
   title = "DRYlib for Java " + version //project.reporting.apiDocTitle
-  options.encoding = 'UTF-8'
+
   options.with {
+    windowTitle = "DRYlib for Java"
+    encoding = 'UTF-8'
+    memberLevel = JavadocMemberLevel.PUBLIC
     linksOffline 'http://javadox.com/org.jetbrains/annotations/15.0/', 'gradle/javadocs/jetbrains-annotations'
     linksOffline 'https://docs.oracle.com/javase/10/docs/api/', 'gradle/javadocs/javase-10'
+  }
+
+  ['bits', 'code', 'crypto', 'data', 'ffi', 'geo', 'io', 'lang', 'logic',
+   'math', 'media', 'meta', 'net', 'qty', 'std', 'sys', 'time', 'util'].each {
+    exclude "dry/${it}/*.java"
   }
 }
