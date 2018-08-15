@@ -3,6 +3,7 @@
 package dry;
 
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 
 import org.jetbrains.annotations.NotNull;
@@ -12,8 +13,11 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see <a href="https://drylib.org/base/string">[1]</a>
  */
-public interface String extends Datum, Comparable<String>, Cloneable {
+public interface String extends Datum, Comparable<String>, Cloneable, Readable {
   public @NotNull String clone();
+
+  @Override
+  public int read(@NotNull CharBuffer buffer);
 
   public @NotNull Charset charset();
 
@@ -31,7 +35,7 @@ public interface String extends Datum, Comparable<String>, Cloneable {
    */
   public boolean isBlank();
 
-  public boolean is(final @NotNull java.lang.String string);
+  public boolean is(@NotNull java.lang.String string);
 
   public @NotNull Nat size();
 

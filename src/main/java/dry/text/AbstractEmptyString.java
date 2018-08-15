@@ -3,6 +3,7 @@
 package dry.text;
 
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
 import java.util.Objects;
 
 import dry.Nat;
@@ -100,5 +101,11 @@ abstract class AbstractEmptyString extends AbstractString implements dry.String 
     }
     Objects.requireNonNull(that);
     return that.isEmpty() ? 0 : -1; // always the smallest element
+  }
+
+  @Override
+  public int read(final @NotNull CharBuffer buffer) {
+    Objects.requireNonNull(buffer);
+    return 0; // no characters added
   }
 }

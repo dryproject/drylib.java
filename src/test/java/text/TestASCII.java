@@ -109,9 +109,24 @@ class TestASCII {
   void testCloneability() {
     // See: https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#clone()
     final ASCII.String x = ASCII.String.of("foobar");
+    assertThat(x).isInstanceOf(Cloneable.class);
     assertThat(x.clone()).isNotSameAs(x);
     assertThat(x.clone().getClass()).isSameAs(x.getClass());
     assertThat(x.clone()).isEqualTo(x);
+  }
+
+////////////////////////////////////////////////////////////////////////////////
+
+  @Test
+  void testReadability() {
+    // See: https://docs.oracle.com/javase/10/docs/api/java/lang/Readable.html
+    final ASCII.String x = ASCII.String.of("123456");
+    assertThat(x).isInstanceOf(Readable.class);
+    java.nio.CharBuffer cb = java.nio.CharBuffer.allocate(8);
+    assertThat(x.read(cb)).isEqualTo(6);
+    assertThat(x.read(cb)).isEqualTo(2);
+    assertThat(x.read(cb)).isEqualTo(0);
+    assertThat(cb.rewind().toString()).isEqualTo("12345612");
   }
 
 ////////////////////////////////////////////////////////////////////////////////

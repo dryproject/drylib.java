@@ -3,6 +3,10 @@
 package dry.text;
 
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.CharsetDecoder;
+import java.nio.charset.CoderResult;
+import java.nio.charset.CodingErrorAction;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -137,5 +141,25 @@ abstract class AbstractString implements dry.String {
       assert false : "unreachable";
       return null;
     }
+  }
+
+  @Override
+  public int read(final @NotNull CharBuffer output) {
+    Objects.requireNonNull(output);
+    final int outputPos = output.position();
+    final ByteBuffer input = this.buffer();
+
+    final CharsetDecoder decoder = this.charset().newDecoder()
+      .onMalformedInput(CodingErrorAction.REPLACE)
+      .onUnmappableCharacter(CodingErrorAction.REPLACE);
+
+    final CoderResult result = decoder.decode(input, output, true);
+    if (result.isUnderflow() || result.isOverflow()) {
+      return output.position() - outputPos;
+    }
+
+    assert !result.isError();
+    assert false : "unreachable";
+    return -1;
   }
 }

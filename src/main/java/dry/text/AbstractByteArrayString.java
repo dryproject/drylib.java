@@ -3,6 +3,7 @@
 package dry.text;
 
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
 import java.util.Arrays;
 import java.util.Objects;
 
