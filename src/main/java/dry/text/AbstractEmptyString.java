@@ -4,8 +4,10 @@ package dry.text;
 
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
+import dry.Char;
 import dry.Nat;
 import dry.String;
 
@@ -107,5 +109,22 @@ abstract class AbstractEmptyString extends AbstractString implements dry.String 
   public int read(final @NotNull CharBuffer buffer) {
     Objects.requireNonNull(buffer);
     return 0; // no characters added
+  }
+
+  class Iterator implements java.util.Iterator<Char> {
+    @Override
+    public boolean hasNext() {
+      return false; // no elements
+    }
+
+    @Override
+    public @NotNull Char next() {
+      throw new NoSuchElementException();
+    }
+  }
+
+  @Override
+  public @NotNull java.util.Iterator<Char> iterator() {
+    return new Iterator();
   }
 }

@@ -144,6 +144,13 @@ abstract class AbstractString implements dry.String {
   }
 
   @Override
+  public @NotNull java.lang.String toString() {
+    final CharBuffer result = CharBuffer.allocate(this.bufferSize()); // TODO: optimize
+    this.read(result);
+    return result.toString();
+  }
+
+  @Override
   public int read(final @NotNull CharBuffer output) {
     Objects.requireNonNull(output);
     final int outputPos = output.position();

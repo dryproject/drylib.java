@@ -14,8 +14,11 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see <a href="https://drylib.org/base/string">[1]</a>
  */
-public interface String extends Datum, Comparable<String>, Cloneable, Readable, Serializable {
+public interface String extends Datum, Iterable<Char>, Comparable<String>, Cloneable, Readable, Serializable {
   public static final long serialVersionUID = 1L;
+
+  @Override
+  public @NotNull java.util.Iterator<Char> iterator();
 
   public @NotNull String clone();
 
@@ -41,6 +44,9 @@ public interface String extends Datum, Comparable<String>, Cloneable, Readable, 
   public boolean is(@NotNull java.lang.String string);
 
   public @NotNull Nat size();
+
+  @Override
+  public @NotNull java.lang.String toString();
 
   public @NotNull byte[] toByteArray();
 

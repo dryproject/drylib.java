@@ -5,8 +5,10 @@ package dry.text;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
+import dry.Char;
 import dry.Nat;
 import dry.String;
 
@@ -100,5 +102,25 @@ abstract class AbstractByteArrayString extends AbstractString implements dry.Str
     return Arrays.compare(
       this.array(), this.arrayOffset(), this.arrayLimit(),
       that.array(), that.arrayOffset(), that.arrayLimit());
+  }
+
+  class Iterator implements java.util.Iterator<Char> {
+    int position = AbstractByteArrayString.this.arrayOffset();
+
+    @Override
+    public boolean hasNext() {
+      return this.position < AbstractByteArrayString.this.arrayLimit();
+    }
+
+    @Override
+    public @NotNull Char next() {
+      if (!this.hasNext()) throw new NoSuchElementException();
+      return Char.of(AbstractByteArrayString.this.array[this.position++]);
+    }
+  }
+
+  @Override
+  public @NotNull java.util.Iterator<Char> iterator() {
+    return new Iterator();
   }
 }

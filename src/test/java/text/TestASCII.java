@@ -3,6 +3,7 @@
 import dry.text.ASCII;
 
 import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import dry.*;
 import dry.String;
@@ -101,6 +102,18 @@ class TestASCII {
     assertThatIllegalArgumentException().isThrownBy(() -> { ASCII.String.of(java.nio.ByteBuffer.wrap(new byte[] { (byte)0x80 })); });
     assertThat(ASCII.String.of(java.nio.ByteBuffer.wrap(new byte[] {}))).isNotNull();
     assertThat(ASCII.String.of(java.nio.ByteBuffer.wrap(new byte[] { 0x61 }))).isNotNull();
+  }
+
+////////////////////////////////////////////////////////////////////////////////
+
+  @Test
+  void testIterability() {
+    // See: https://docs.oracle.com/javase/10/docs/api/java/util/Iterator.html
+    final ASCII.String string = ASCII.String.of("123456");
+
+    final java.nio.CharBuffer buffer = java.nio.CharBuffer.allocate(6);
+    for (final Char c : string) buffer.put((char)c.value()); // safe cast with ASCII charset
+    assertThat(buffer.toString()).isEqualTo(string.toString());
   }
 
 ////////////////////////////////////////////////////////////////////////////////
