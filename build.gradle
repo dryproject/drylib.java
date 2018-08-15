@@ -34,6 +34,10 @@ test {
 javadoc {
   source = project.sourceSets.main.allJava
   classpath = project.sourceSets.main.compileClasspath
-  title = project.reporting.apiDocTitle
+  title = "DRYlib for Java " + version //project.reporting.apiDocTitle
   options.encoding = 'UTF-8'
+  options.with {
+    linksOffline 'http://javadox.com/org.jetbrains/annotations/15.0/', 'gradle/javadocs/jetbrains-annotations'
+    linksOffline 'https://docs.oracle.com/javase/10/docs/api/', 'gradle/javadocs/javase-10'
+  }
 }
