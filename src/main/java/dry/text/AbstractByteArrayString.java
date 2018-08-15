@@ -29,6 +29,15 @@ abstract class AbstractByteArrayString extends AbstractString implements dry.Str
     this.array = Objects.requireNonNull(array);
   }
 
+  protected AbstractByteArrayString(final @NotNull ByteBuffer buffer) {
+    Objects.requireNonNull(buffer);
+    assert buffer.hasArray();
+    assert buffer.array() != null;
+    this.array = (buffer.arrayOffset() == 0) ?
+      buffer.array() :
+      Arrays.copyOfRange(buffer.array(), buffer.arrayOffset(), buffer.array().length);
+  }
+
   @Override
   protected @NotNull byte[] array() {
     return this.array;

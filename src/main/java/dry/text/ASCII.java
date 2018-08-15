@@ -36,6 +36,7 @@ public final class ASCII {
    * @see <a href="https://drylib.org/text/ascii/string">[1]</a>
    */
   public interface String extends dry.String {
+    public static final long serialVersionUID = 1L;
     public static final String EMPTY = new EmptyString();
 
     public static @NotNull String of(final byte input) {
@@ -57,7 +58,8 @@ public final class ASCII {
     public static @NotNull String of(final char input) {
       if (input < MIN_CHAR.value) throw new ValidationException();
       if (input > MAX_CHAR.value) throw new ValidationException();
-      return new ByteBufferString(CHARSET.encode(CharBuffer.wrap(new char[]{ input })));
+      final ByteBuffer buffer = CHARSET.encode(CharBuffer.wrap(new char[]{ input }));
+      return buffer.hasArray() ? new ByteArrayString(buffer.array()) : new ByteBufferString(buffer);
     }
 
     public static @NotNull String of(final @NotNull char[] input) {
@@ -67,7 +69,8 @@ public final class ASCII {
         if (c < MIN_CHAR.value) throw new ValidationException();
         if (c > MAX_CHAR.value) throw new ValidationException();
       }
-      return new ByteBufferString(CHARSET.encode(CharBuffer.wrap(input)));
+      final ByteBuffer buffer = CHARSET.encode(CharBuffer.wrap(input));
+      return buffer.hasArray() ? new ByteArrayString(buffer.array()) : new ByteBufferString(buffer);
     }
 
     public static @NotNull String of(final @NotNull Char input) {
@@ -94,7 +97,8 @@ public final class ASCII {
         if (c < MIN_CHAR.value) throw new ValidationException();
         if (c > MAX_CHAR.value) throw new ValidationException();
       });
-      return new ByteBufferString(CHARSET.encode(input));
+      final ByteBuffer buffer = CHARSET.encode(input);
+      return buffer.hasArray() ? new ByteArrayString(buffer.array()) : new ByteBufferString(buffer);
     }
 
     public static @NotNull String of(final @NotNull java.lang.CharSequence input) {
@@ -104,7 +108,8 @@ public final class ASCII {
         if (c < MIN_CHAR.value) throw new ValidationException();
         if (c > MAX_CHAR.value) throw new ValidationException();
       });
-      return new ByteBufferString(CHARSET.encode(java.nio.CharBuffer.wrap(input)));
+      final ByteBuffer buffer = CHARSET.encode(java.nio.CharBuffer.wrap(input));
+      return buffer.hasArray() ? new ByteArrayString(buffer.array()) : new ByteBufferString(buffer);
     }
 
     public static @NotNull String of(final @NotNull java.nio.CharBuffer input) {
@@ -120,7 +125,8 @@ public final class ASCII {
       catch (final IndexOutOfBoundsException error) {
         assert false : "unreachable";
       }
-      return new ByteBufferString(CHARSET.encode(input.slice()));
+      final ByteBuffer buffer = CHARSET.encode(input.slice());
+      return buffer.hasArray() ? new ByteArrayString(buffer.array()) : new ByteBufferString(buffer);
     }
 
     public static @NotNull String of(final @NotNull java.nio.ByteBuffer input) {
@@ -145,6 +151,8 @@ public final class ASCII {
 
   // @private
   public static class EmptyString extends AbstractEmptyString implements String {
+    private static final long serialVersionUID = 1L;
+
     protected EmptyString() {
       super();
     }
@@ -167,8 +175,14 @@ public final class ASCII {
 
   // @private
   public static class ByteArrayString extends AbstractByteArrayString implements String {
+    private static final long serialVersionUID = 1L;
+
     protected ByteArrayString(final @NotNull byte[] array) {
       super(Objects.requireNonNull(array));
+    }
+
+    protected ByteArrayString(final @NotNull ByteBuffer buffer) {
+      super(Objects.requireNonNull(buffer));
     }
 
     @Override
@@ -189,6 +203,8 @@ public final class ASCII {
 
   // @private
   public static class ByteBufferString extends AbstractByteBufferString implements String {
+    private static final long serialVersionUID = 1L;
+
     protected ByteBufferString(final @NotNull ByteBuffer buffer) {
       super(Objects.requireNonNull(buffer));
     }

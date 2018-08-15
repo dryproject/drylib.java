@@ -2,6 +2,7 @@
 
 package dry;
 
+import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;
@@ -13,7 +14,9 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see <a href="https://drylib.org/base/string">[1]</a>
  */
-public interface String extends Datum, Comparable<String>, Cloneable, Readable {
+public interface String extends Datum, Comparable<String>, Cloneable, Readable, Serializable {
+  public static final long serialVersionUID = 1L;
+
   public @NotNull String clone();
 
   @Override
